@@ -5,6 +5,12 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f; // You can change this speed in the Unity Inspector
     private Rigidbody2D rb;
     private Vector2 moveInput;
+    private SpriteRenderer spriteRenderer;
+
+    [Header("Sprites")]
+    public Sprite spriteUp;
+    public Sprite spriteDown;
+    public Sprite spriteRight;
 
     public GameObject bulletPrefab; // The prefab you just made
     public Transform firePoint;     // An empty GameObject at the "tip" of your player
@@ -14,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Get the Rigidbody component we attached to this player
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -25,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
 
         moveInput = new Vector2(moveX, moveY).normalized; // .normalized stops you from moving faster diagonally
 
+        UpdateOrientation();
+
         // Check for Left-Click
         if (Input.GetButtonDown("Fire1")) // "Fire1" is Left-Click by default
         {
@@ -32,18 +41,51 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void UpdateOrientation()
+    {
+        if (moveInput == Vector2.zero)
+        {
+            // Optional: Don't change orientation when standing still
+            return;
+        }
+
+        // --- Sprite Logic ---
+        // Prioritize vertical sprites
+        if (moveInput.y > 0.5f)
+        {
+            spriteRenderer.sprite = spriteUp;
+            spriteRenderer.flipX = false;
+        }
+        else if (moveInput.y < -0.5f)
+        {
+            spriteRenderer.sprite = spriteDown;
+            spriteRenderer.flipX = false;
+        }
+        // Horizontal sprites only if not moving much vertically
+        else
+        {
+            if (moveInput.x > 0)
+            {
+                spriteRenderer.sprite = spriteRight;
+                spriteRenderer.flipX = false;
+            }
+            else if (moveInput.x < 0)
+            {
+                spriteRenderer.sprite = spriteRight;
+                spriteRenderer.flipX = true;
+            }
+        }
+
+        // --- Rotation Logic for Shooting ---
+        float angle = Mathf.Atan2(moveInput.y, moveInput.x) * Mathf.Rad2Deg - 90f;
+        firePoint.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
     // FixedUpdate is called on a fixed physics timer (better for physics)
     void FixedUpdate()
     {
         // Apply the movement to the Rigidbody's velocity
         rb.linearVelocity = moveInput * moveSpeed;
-
-        // Rotate the player to face the direction of movement
-        if (moveInput != Vector2.zero)
-        {
-            float angle = Mathf.Atan2(moveInput.y, moveInput.x) * Mathf.Rad2Deg - 90f;
-            rb.rotation = angle;
-        }
     }
 
     void Shoot()
