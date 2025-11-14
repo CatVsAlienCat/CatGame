@@ -2,16 +2,15 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float bulletSpeed = 10f;
+    public float speed = 20f;
+    public float lifeTime = 2f;
     private Rigidbody2D rb;
 
+    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        // "up" is now forward for our rotated player
-        rb.linearVelocity = transform.up * bulletSpeed; 
-
-        // Destroy the bullet after 3 seconds so it doesn't fly forever
-        Destroy(gameObject, 3f); 
+        rb.linearVelocity = transform.up * speed;
+        Destroy(gameObject, lifeTime);
     }
 }
