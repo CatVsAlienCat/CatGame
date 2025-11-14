@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: d23181b729a32f04c85b6a60ceaa9cff
+guid: 5bea6abe5a823ac3f91433e8b5997c5f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9124519500314409934
-    second: alienfacingback_0
-  - first:
-      213: 2147978889741378756
-    second: alienfacingback_1
+      213: -2570077747588984896
+    second: canva-colorful-cute-cats-illustration-desktop-wallpaper-KBBZLdpjLcM_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -99,53 +96,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: alienfacingback_1
+      name: canva-colorful-cute-cats-illustration-desktop-wallpaper-KBBZLdpjLcM_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 192
-        height: 192
+        width: 1600
+        height: 900
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4c4a2147b672fcd10800000000000000
-      internalID: 2147978889741378756
+      spriteID: 0cf82d9c7ef355cd0800000000000000
+      internalID: -2570077747588984896
       vertices: []
       indices: 
       edges: []
@@ -154,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fa4d9140cf070f62490a3d44ab8f257e
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -164,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      alienfacingback_0: 9124519500314409934
-      alienfacingback_1: 2147978889741378756
+      canva-colorful-cute-cats-illustration-desktop-wallpaper-KBBZLdpjLcM_0: -2570077747588984896
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
