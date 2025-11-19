@@ -1,0 +1,1 @@
+README: El gato cuando mira hacia los lados tiene 3 imagenes, dos dando pasos y una estatica, revisar el nombre para diferenciarlas, si pueden animenlo para que al moverse hacia los lados se vea caminando, el estatico honestamente no se si sirva para algo pero quien sabe, lo dejo por que no me costo mucho hacerlo xd
