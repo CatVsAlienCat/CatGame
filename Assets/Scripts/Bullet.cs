@@ -40,9 +40,10 @@ public class Bullet : MonoBehaviour
     {
         rb.linearVelocity = Direction*speed;
     }
+    */
     public void SetDirection(Vector2 direction)
     {
         Direction=direction;
     }
-    */
+    
 }

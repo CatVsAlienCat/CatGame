@@ -19,6 +19,6 @@ public class Enemy_red : Enemies_behavior
     {
         MoveTowardsPlayer(red_speed);
         Hit(Health);
-        //shoot( speedBullet);
+        shoot( speedBullet);
     }
 }

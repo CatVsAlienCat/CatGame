@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
     private SpriteRenderer spriteRenderer;
 
+    private Vector2 Direction;
+
     public int Health=5;
 
     [Header("Sprites")]
@@ -88,6 +90,8 @@ public class PlayerMovement : MonoBehaviour
     {
         // Apply the movement to the Rigidbody's velocity
         rb.linearVelocity = moveInput * moveSpeed;
+
+
     }
 
     void Shoot()
@@ -103,4 +107,5 @@ public class PlayerMovement : MonoBehaviour
             Destroy (gameObject);
         }
     }
+
 }

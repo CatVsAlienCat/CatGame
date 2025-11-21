@@ -10,6 +10,10 @@ public abstract class Enemies_behavior : MonoBehaviour
    public Transform player_pos;
 
    private float speedBullet;
+ public Transform firePoint;
+   public Vector2 Direction;
+   private float LastShoot;
+
 
     protected virtual void MoveTowardsPlayer(float speed)
     {
@@ -32,12 +36,20 @@ public abstract class Enemies_behavior : MonoBehaviour
     
     protected virtual void shoot(float bulletSpeed)
     {
-       Vector3 direction = Player.position - transform.position;
-       direction.Normalize(); 
-       GameObject bullet = Instantiate(bulletPrefab, transform.position + direction + 0.1f,Quaternion.identity);
-       bullet.GetComponent<Bullet>().SetDirection(direction * bulletSpeed);
+        
+        
+        float angle = Mathf.Atan2(Player.position.x,Player.position.y) * Mathf.Rad2Deg - 90f;
+        firePoint.rotation = Quaternion.Euler(0, 0, angle);
+        Direction=new Vector2(Player.position.x,Player.position.y);
        
+       GameObject bullet = Instantiate(bulletPrefab, transform.position ,firePoint.rotation);
+       bullet.GetComponent<Bullet>().SetDirection(Direction);
+
+
+       
+
     }  
+    
     
     
 }
