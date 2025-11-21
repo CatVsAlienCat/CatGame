@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
     private SpriteRenderer spriteRenderer;
 
+    public int Health=5;
+
     [Header("Sprites")]
     public Sprite spriteUp;
     public Sprite spriteDown;
@@ -92,5 +94,13 @@ public class PlayerMovement : MonoBehaviour
     {
         // Create a new bullet from the prefab, at the firePoint's position and rotation
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+    }
+
+    public virtual void Hit(int Health){
+        Health--;
+        if (Health==0)
+        {
+            Destroy (gameObject);
+        }
     }
 }

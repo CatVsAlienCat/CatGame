@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 6827667f3e232a94bb8ea4fc0335f269
+guid: 6a5eef6f9d4bee649ab6d2dd7cc3c984
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1234042283337828366
-    second: aliendeath_0
-  - first:
-      213: 8328843710465827206
-    second: aliendeath_1
+      213: -6125432846983598423
+    second: Henry_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -129,35 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: aliendeath_0
+      name: Henry_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 7
-        width: 48
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e08c9202be2302110800000000000000
-      internalID: 1234042283337828366
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: aliendeath_1
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 8
         y: 0
-        width: 48
-        height: 8
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 681ef000a3ff59370800000000000000
-      internalID: 8328843710465827206
+      spriteID: 9ae680497471efaa0800000000000000
+      internalID: -6125432846983598423
       vertices: []
       indices: 
       edges: []
@@ -186,8 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      aliendeath_0: 1234042283337828366
-      aliendeath_1: 8328843710465827206
+      Henry_0: -6125432846983598423
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
