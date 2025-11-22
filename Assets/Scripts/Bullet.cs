@@ -4,41 +4,44 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 20f;
     public float lifeTime = 2f;
-    private Rigidbody2D rb;
-    private Vector2 Direction;
-    private int Health;
+    public int damage = 1;
+    public bool isPlayerBullet; // This flag will distinguish player bullets from enemy bullets
 
-    // Start is called before the first frame update
-    public void Start()
+    private Rigidbody2D rb;
+
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = transform.up * speed;
         Destroy(gameObject, lifeTime);
+
+        rb.linearVelocity = transform.up * speed;
     }
-    public void DestroyBullet()
+
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy (gameObject);
-    }
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        PlayerMovement player = collision.collider.GetComponent<PlayerMovement>();
-        Enemies_behavior enemy = collision.collider.GetComponent<Enemies_behavior>();
-        if (enemy != null)
+        // Player bullets damage enemies
+        if (isPlayerBullet)
         {
-            enemy.Hit(Health);
+            Enemies_behavior enemy = collision.collider.GetComponent<Enemies_behavior>();
+            if (enemy != null)
+            {
+                enemy.Hit(damage);
+                Destroy(gameObject);
+            }
         }
-        if (player != null)
+        // Enemy bullets damage the player
+        else
         {
-            player.Hit(Health);
+            PlayerMovement player = collision.collider.GetComponent<PlayerMovement>();
+            if (player != null)
+            {
+                player.Hit(damage);
+                Destroy(gameObject);
+            }
         }
-        DestroyBullet();
-
+        // Also destroy bullet if it hits something else, like a wall
+        if (collision.collider.GetComponent<PlayerMovement>() == null && collision.collider.GetComponent<Enemies_behavior>() == null){
+            Destroy(gameObject);
+        }
     }
-
-
-    public void SetDirection(Vector2 direction)
-    {
-        Direction=direction;
-    }
-    
 }

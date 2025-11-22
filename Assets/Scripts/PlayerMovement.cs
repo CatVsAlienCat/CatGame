@@ -9,7 +9,12 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 Direction;
 
-    public int Health=5;
+    [Header("Health")]
+    public int maxHealth = 5;
+    public int Health { get; private set; }
+
+    public static event System.Action<int, int> OnHealthChanged;
+
 
     [Header("Sprites")]
     public Sprite spriteUp;
@@ -25,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
         // Get the Rigidbody component we attached to this player
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        Health = maxHealth;
+        OnHealthChanged?.Invoke(Health, maxHealth);
     }
 
     // Update is called once per frame
@@ -97,14 +105,19 @@ public class PlayerMovement : MonoBehaviour
     void Shoot()
     {
         // Create a new bullet from the prefab, at the firePoint's position and rotation
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        bullet.GetComponent<Bullet>().isPlayerBullet = true;
     }
 
-    public virtual void Hit(int Health){
-        Health--;
-        if (Health==0)
+    public void Hit(int damage)
+    {
+        Health -= damage;
+        if (Health < 0) Health = 0;
+        OnHealthChanged?.Invoke(Health, maxHealth);
+
+        if (this.Health <= 0)
         {
-            Destroy (gameObject);
+            Destroy(gameObject);
         }
     }
 
