@@ -36,8 +36,6 @@ public abstract class Enemies_behavior : MonoBehaviour
     
     protected virtual void shoot(float bulletSpeed)
     {
-        
-        
         float angle = Mathf.Atan2(Player.position.x,Player.position.y) * Mathf.Rad2Deg - 90f;
         firePoint.rotation = Quaternion.Euler(0, 0, angle);
         Direction=new Vector2(Player.position.x,Player.position.y);
@@ -45,6 +43,7 @@ public abstract class Enemies_behavior : MonoBehaviour
        GameObject bullet = Instantiate(bulletPrefab, transform.position ,firePoint.rotation);
        bullet.GetComponent<Bullet>().SetDirection(Direction);
 
+       
 
        
 
