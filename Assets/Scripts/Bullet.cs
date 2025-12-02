@@ -12,29 +12,17 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        // Make the bullet a trigger to avoid physics interactions
-        GetComponent<Collider2D>().isTrigger = true;
         Destroy(gameObject, lifeTime);
 
         rb.linearVelocity = transform.up * speed;
-
-        // If this is a player bullet, ignore collisions with the player
-        if (isPlayerBullet)
-        {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            if (player != null)
-            {
-                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), player.GetComponent<Collider2D>());
-            }
-        }
     }
 
-    void OnTriggerEnter2D(Collider2D otherCollider)
+     void OnCollisionEnter2D(Collision2D collision)
     {
         // Player bullets damage enemies
         if (isPlayerBullet)
         {
-            Enemies_behavior enemy = otherCollider.GetComponent<Enemies_behavior>();
+            Enemies_behavior enemy = collision.collider.GetComponent<Enemies_behavior>();
             if (enemy != null)
             {
                 enemy.Hit(damage);
@@ -44,7 +32,7 @@ public class Bullet : MonoBehaviour
         // Enemy bullets damage the player
         else
         {
-            PlayerMovement player = otherCollider.GetComponent<PlayerMovement>();
+            PlayerMovement player = collision.collider.GetComponent<PlayerMovement>();
             if (player != null)
             {
                 player.Hit(damage);
@@ -52,7 +40,7 @@ public class Bullet : MonoBehaviour
             }
         }
         // Also destroy bullet if it hits something else, like a wall
-        if (otherCollider.GetComponent<PlayerMovement>() == null && otherCollider.GetComponent<Enemies_behavior>() == null){
+        if (collision.collider.GetComponent<PlayerMovement>() == null && collision.collider.GetComponent<Enemies_behavior>() == null){
             Destroy(gameObject);
         }
     }
