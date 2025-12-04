@@ -1684,7 +1684,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.04, y: -0.92, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 4.7554}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1387558522}
@@ -1704,9 +1704,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   maxHealth: 5
-  spriteUp: {fileID: 5766875653720803050, guid: e4e001b19b1b080e4b87fa67bdde24c6, type: 3}
-  spriteDown: {fileID: -6125432846983598423, guid: 6a5eef6f9d4bee649ab6d2dd7cc3c984, type: 3}
-  spriteRight: {fileID: -3473230993195373443, guid: 1709653044361ee4bb10008bb9d4e6d5, type: 3}
+  animationSpeed: 0.2
+  walkUpSprites:
+  - {fileID: 5766875653720803050, guid: e4e001b19b1b080e4b87fa67bdde24c6, type: 3}
+  - {fileID: -4044923628713824418, guid: 36cfbb7f456935212b0223f1aba35646, type: 3}
+  - {fileID: 5605850599533790594, guid: 1ba851c41545a72cc9bc3cc44d89e310, type: 3}
+  walkDownSprites:
+  - {fileID: -2863477453826468961, guid: 96ead159c5ad059e29f9389c5e1168ab, type: 3}
+  - {fileID: 8120240790448802502, guid: a3e8092ce0e2d7dacbd41d87a327252f, type: 3}
+  - {fileID: 5280086378964746455, guid: 413d5f4bad69cb0fc9b90f20a5af2536, type: 3}
+  walkSideSprites:
+  - {fileID: -3473230993195373443, guid: 1709653044361ee4bb10008bb9d4e6d5, type: 3}
+  - {fileID: -1005522805823468689, guid: 43429c141cf5fc60f83df6e5661ddfd9, type: 3}
+  - {fileID: -1005522805823468689, guid: 43429c141cf5fc60f83df6e5661ddfd9, type: 3}
   bulletPrefab: {fileID: 438303382489720476, guid: cc2438f4e6e2a010eb8cec6d7dc07208, type: 3}
   firePoint: {fileID: 1387558522}
 --- !u!1 &1641600142
@@ -1898,8 +1908,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.04, y: 2.11, z: 0}
-  m_LocalScale: {x: 1, y: 0.92207736, z: 0.4691312}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1641600143}
   m_Father: {fileID: 0}

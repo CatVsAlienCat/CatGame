@@ -2,12 +2,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f; // You can change this speed in the Unity Inspector
+    public float moveSpeed = 5f; 
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private SpriteRenderer spriteRenderer;
-
-    private Vector2 Direction;
 
     [Header("Health")]
     public int maxHealth = 5;
@@ -15,19 +13,25 @@ public class PlayerMovement : MonoBehaviour
 
     public static event System.Action<int, int> OnHealthChanged;
 
+    [Header("Animation Settings")]
+    [Tooltip("Time in seconds between frames (lower is faster)")]
+    public float animationSpeed = 0.2f;
+    private float animationTimer;
+    private int currentFrame;
 
-    [Header("Sprites")]
-    public Sprite spriteUp;
-    public Sprite spriteDown;
-    public Sprite spriteRight;
+    [Header("Sprite Lists")]
+    // Changed these from single Sprites to Arrays []
+    public Sprite[] walkUpSprites;
+    public Sprite[] walkDownSprites;
+    public Sprite[] walkSideSprites; // Used for both Right and Left
 
-    public GameObject bulletPrefab; // The prefab you just made
-    public Transform firePoint;     // An empty GameObject at the "tip" of your player
+    [Header("Combat")]
+    public GameObject bulletPrefab; 
+    public Transform firePoint;     
 
     // Start is called before the first frame update
     void Start()
     {
-        // Get the Rigidbody component we attached to this player
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -38,18 +42,45 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Get input from keyboard (Arrow keys or WASD)
-        float moveX = Input.GetAxisRaw("Horizontal"); // -1 for left, 1 for right
-        float moveY = Input.GetAxisRaw("Vertical");   // -1 for down, 1 for up
+        // Get input
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
 
-        moveInput = new Vector2(moveX, moveY).normalized; // .normalized stops you from moving faster diagonally
+        moveInput = new Vector2(moveX, moveY).normalized;
 
+        // Calculate Animation Frame
+        HandleAnimationFrame();
+
+        // Update Sprite image and rotation based on input
         UpdateOrientation();
 
         // Check for Left-Click
-        if (Input.GetButtonDown("Fire1")) // "Fire1" is Left-Click by default
+        if (Input.GetButtonDown("Fire1")) 
         {
             Shoot();
+        }
+    }
+
+    void HandleAnimationFrame()
+    {
+        // If we are moving, cycle through frames
+        if (moveInput != Vector2.zero)
+        {
+            animationTimer += Time.deltaTime;
+            
+            if (animationTimer >= animationSpeed)
+            {
+                animationTimer = 0f;
+                currentFrame++; 
+                // We don't limit the frame here, we use modulo (%) later 
+                // to wrap around whatever array length we are using
+            }
+        }
+        else
+        {
+            // If standing still, reset to the first frame (Idle)
+            currentFrame = 0;
+            animationTimer = 0f;
         }
     }
 
@@ -57,33 +88,47 @@ public class PlayerMovement : MonoBehaviour
     {
         if (moveInput == Vector2.zero)
         {
-            // Optional: Don't change orientation when standing still
+            // When standing still, we still want to show the idle frame (frame 0) 
+            // of the last direction we faced, but for simplicity here we just return.
+            // If you want "Idle" animations, remove this return and add logic to remember last direction.
             return;
         }
 
         // --- Sprite Logic ---
-        // Prioritize vertical sprites
+        
+        // UP
         if (moveInput.y > 0.5f)
         {
-            spriteRenderer.sprite = spriteUp;
             spriteRenderer.flipX = false;
+            if (walkUpSprites.Length > 0) 
+            {
+                // The % operator ensures we loop back to 0 if currentFrame exceeds array length
+                spriteRenderer.sprite = walkUpSprites[currentFrame % walkUpSprites.Length];
+            }
         }
+        // DOWN
         else if (moveInput.y < -0.5f)
         {
-            spriteRenderer.sprite = spriteDown;
             spriteRenderer.flipX = false;
+            if (walkDownSprites.Length > 0)
+            {
+                spriteRenderer.sprite = walkDownSprites[currentFrame % walkDownSprites.Length];
+            }
         }
-        // Horizontal sprites only if not moving much vertically
+        // SIDEWAYS (Right or Left)
         else
         {
+            if (walkSideSprites.Length > 0)
+            {
+                spriteRenderer.sprite = walkSideSprites[currentFrame % walkSideSprites.Length];
+            }
+
             if (moveInput.x > 0)
             {
-                spriteRenderer.sprite = spriteRight;
                 spriteRenderer.flipX = false;
             }
             else if (moveInput.x < 0)
             {
-                spriteRenderer.sprite = spriteRight;
                 spriteRenderer.flipX = true;
             }
         }
@@ -93,20 +138,17 @@ public class PlayerMovement : MonoBehaviour
         firePoint.rotation = Quaternion.Euler(0, 0, angle);
     }
 
-    // FixedUpdate is called on a fixed physics timer (better for physics)
     void FixedUpdate()
     {
-        // Apply the movement to the Rigidbody's velocity
         rb.linearVelocity = moveInput * moveSpeed;
-
-
     }
 
     void Shoot()
     {
-        // Create a new bullet from the prefab, at the firePoint's position and rotation
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bullet.GetComponent<Bullet>().isPlayerBullet = true;
+        // Ensure your Bullet script has this variable public, or remove this line if not needed yet
+        if(bullet.GetComponent<Bullet>() != null)
+            bullet.GetComponent<Bullet>().isPlayerBullet = true;
     }
 
     public void Hit(int damage)
@@ -120,5 +162,4 @@ public class PlayerMovement : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }
