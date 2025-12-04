@@ -14,6 +14,7 @@
 - [ ] Soundtrack y sistema de soundtrack
 - [ ] SFX y sistema de SFX con feedback
 - [ ] Recortar tileset
+
 ## Rafael:
 
 - [ ] Creación de Tileset
