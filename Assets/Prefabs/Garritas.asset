@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ab1bdeafb71eef0ad3770586349a7e, type: 3}
   m_Name: Garritas
   m_EditorClassIdentifier: 
-  weaponName: 
-  bulletPrefab: {fileID: 0}
+  weaponName: Garritas
+  bulletPrefab: {fileID: 3365004243866206498, guid: 9f66ffe9894de9225a3383eecb4a360c, type: 3}
   fireRate: 0.5
   damage: 1
-  bulletSpeed: 20
-  bulletLifeTime: 2
-  isMelee: 0
+  bulletSpeed: 1000
+  bulletLifeTime: 0.3
+  isMelee: 1
+  spawnDistance: 0.3
+  knockbackForce: 5
+  icon: {fileID: -5779813252569257538, guid: 69c714665f9a25bee92167dee503c454, type: 3}

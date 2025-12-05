@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: MachineGun
   m_EditorClassIdentifier: 
   weaponName: Machinegun
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 438303382489720476, guid: cc2438f4e6e2a010eb8cec6d7dc07208, type: 3}
   fireRate: 0.1
   damage: 1
   bulletSpeed: 20
   bulletLifeTime: 2
+  isMelee: 0
+  spawnDistance: 0
+  knockbackForce: 1
+  icon: {fileID: 2291270967926626937, guid: 41ceaebd174743246b904343d4b77bda, type: 3}

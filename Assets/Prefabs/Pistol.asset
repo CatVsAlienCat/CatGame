@@ -18,3 +18,7 @@ MonoBehaviour:
   damage: 1
   bulletSpeed: 20
   bulletLifeTime: 5
+  isMelee: 0
+  spawnDistance: 0
+  knockbackForce: 1
+  icon: {fileID: 2291270967926626937, guid: 41ceaebd174743246b904343d4b77bda, type: 3}
