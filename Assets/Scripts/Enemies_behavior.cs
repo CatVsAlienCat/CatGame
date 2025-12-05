@@ -24,6 +24,9 @@ public abstract class Enemies_behavior : MonoBehaviour
 
 
 
+    private Rigidbody2D rb;
+    private bool isKnockedBack = false;
+
     protected void Start()
     {
         player_pos = GameObject.FindWithTag("Player")?.transform;
@@ -32,14 +35,35 @@ public abstract class Enemies_behavior : MonoBehaviour
             Player = player_pos;
         }
         spriteRenderer = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
         StartCoroutine(ShootWithCooldown());
     }
 
     protected virtual void MoveTowardsPlayer(float speed)
     {
+        if (isKnockedBack) return;
+
         Vector2 direction = (Player.position - transform.position).normalized;
         transform.position = Vector2.MoveTowards(transform.position,new Vector2(Player.position.x,Player.position.y),speed*Time.deltaTime);
         UpdateOrientation(direction);
+    }
+
+    public void ApplyKnockback(Vector2 direction, float force)
+    {
+        if (rb != null)
+        {
+            isKnockedBack = true;
+            rb.linearVelocity = Vector2.zero; // Reset velocity before applying force
+            rb.AddForce(direction * force, ForceMode2D.Impulse);
+            StartCoroutine(ResetKnockback());
+        }
+    }
+
+    private IEnumerator ResetKnockback()
+    {
+        yield return new WaitForSeconds(0.2f); // Knockback duration
+        isKnockedBack = false;
+        if (rb != null) rb.linearVelocity = Vector2.zero; // Stop sliding
     }
     
     void UpdateOrientation(Vector2 moveInput)

@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public Sprite[] walkSideSprites; // Used for both Right and Left
 
     [Header("Combat")]
-    public GameObject bulletPrefab; 
+    // public GameObject bulletPrefab; // Removed - handled by WeaponController
     public Transform firePoint;     
 
     // Start is called before the first frame update
@@ -55,10 +55,7 @@ public class PlayerMovement : MonoBehaviour
         UpdateOrientation();
 
         // Check for Left-Click
-        if (Input.GetButtonDown("Fire1")) 
-        {
-            Shoot();
-        }
+        // Shooting input removed - handled by WeaponController
     }
 
     void HandleAnimationFrame()
@@ -134,8 +131,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // --- Rotation Logic for Shooting ---
-        float angle = Mathf.Atan2(moveInput.y, moveInput.x) * Mathf.Rad2Deg - 90f;
-        firePoint.rotation = Quaternion.Euler(0, 0, angle);
+        // Snap to 8 directions (45 degrees)
+        float rawAngle = Mathf.Atan2(moveInput.y, moveInput.x) * Mathf.Rad2Deg;
+        float snappedAngle = Mathf.Round(rawAngle / 45f) * 45f;
+        firePoint.rotation = Quaternion.Euler(0, 0, snappedAngle - 90f);
     }
 
     void FixedUpdate()
@@ -143,13 +142,7 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = moveInput * moveSpeed;
     }
 
-    void Shoot()
-    {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        // Ensure your Bullet script has this variable public, or remove this line if not needed yet
-        if(bullet.GetComponent<Bullet>() != null)
-            bullet.GetComponent<Bullet>().isPlayerBullet = true;
-    }
+    // Shoot method removed - handled by WeaponController
 
     public void Hit(int damage)
     {
