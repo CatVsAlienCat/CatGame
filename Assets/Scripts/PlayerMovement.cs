@@ -25,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
     public Sprite[] walkDownSprites;
     public Sprite[] walkSideSprites; // Used for both Right and Left
 
+    [Header("Audio")]
+    public AudioClip[] footstepSounds;
+
     [Header("Combat")]
     // public GameObject bulletPrefab; // Removed - handled by WeaponController
     public Transform firePoint;     
@@ -71,6 +74,8 @@ public class PlayerMovement : MonoBehaviour
                 currentFrame++; 
                 // We don't limit the frame here, we use modulo (%) later 
                 // to wrap around whatever array length we are using
+
+                AudioManager.Instance.PlayRandomSFX(footstepSounds);
             }
         }
         else

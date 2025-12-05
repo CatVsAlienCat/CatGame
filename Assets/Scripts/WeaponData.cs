@@ -13,4 +13,5 @@ public class WeaponData : ScriptableObject
     public float spawnDistance = 0f; // Distance from player center
     public float knockbackForce = 5f;
     public Sprite icon;
+    public AudioClip shootSound;
 }

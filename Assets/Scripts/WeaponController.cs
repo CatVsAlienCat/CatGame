@@ -85,6 +85,8 @@ public class WeaponController : MonoBehaviour
         WeaponData currentWeapon = weapons[currentWeaponIndex];
         if (currentWeapon.bulletPrefab == null || firePoint == null) return;
 
+        AudioManager.Instance.PlaySFX(currentWeapon.shootSound);
+
         if (currentWeapon.isMelee)
         {
             // Melee Attack Logic
