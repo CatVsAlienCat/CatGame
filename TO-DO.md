@@ -1,14 +1,15 @@
 # Funcionalidad
 
 ## Sergio:
-- [ - ] Sistema de Armas Abstractas, HUD y Cambio
-- [ x ] Sistema de vida con interfaz
-- [ ] Sistema de pickups
+- [x] Sistema de Armas Abstractas, HUD y Cambio
+- [x] Sistema de vida con interfaz
+- [x] Sistema de pickups
 
 ## Laura:
 
 - [ ] Script de spawneo de enemigos
 - [ ] Más behaviors de enemigos (solo que pegue cuando este al lado, dispare diferente etc)
+
 ## Lucas: 
 
 - [ ] Soundtrack y sistema de soundtrack
