@@ -1,15 +1,12 @@
 using UnityEngine;
-using UnityEngine.UI;
+using System.Collections.Generic;
 
-[RequireComponent(typeof(Slider))]
 public class HealthBar : MonoBehaviour
 {
-    private Slider healthSlider;
+    [Header("Hearts")]
+    public Heart[] hearts;
 
-    void Awake()
-    {
-        healthSlider = GetComponent<Slider>();
-    }
+    private int previousHealth = -1;
 
     void OnEnable()
     {
@@ -23,9 +20,40 @@ public class HealthBar : MonoBehaviour
 
     private void UpdateHealthBar(int currentHealth, int maxHealth)
     {
-        if (maxHealth > 0)
+        // Initialize previousHealth if it's the first update
+        if (previousHealth == -1)
         {
-            healthSlider.value = (float)currentHealth / maxHealth;
+            previousHealth = currentHealth;
+            // Initial setup without animation
+            for (int i = 0; i < hearts.Length; i++)
+            {
+                hearts[i].SetActive(i < currentHealth);
+            }
+            return;
         }
+
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (i < currentHealth)
+            {
+                // Heart should be full
+                hearts[i].SetActive(true);
+            }
+            else if (i < previousHealth)
+            {
+                // Heart was full, now empty -> Play destruction
+                hearts[i].PlayDestruction();
+            }
+            else
+            {
+                // Heart was already empty or is outside range
+                // Only set to empty if it's not currently playing animation?
+                // Heart.SetActive(false) stops coroutines, so we should only call it if we are sure.
+                // If i >= previousHealth, it was already empty.
+                hearts[i].SetActive(false);
+            }
+        }
+
+        previousHealth = currentHealth;
     }
 }

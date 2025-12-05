@@ -2,7 +2,7 @@
 
 ## Sergio:
 - [ ] Sistema de Armas Abstractas, HUD y Cambio
-- [ ] Sistema de vida con interfaz
+- [ x ] Sistema de vida con interfaz
 - [ ] Sistema de pickups
 
 ## Laura:
