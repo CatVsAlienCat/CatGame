@@ -5,7 +5,12 @@ using System.Collections;
 public abstract class Enemies_behavior : MonoBehaviour
 {
    public  Transform Player;
-   public int Health = 3;
+   public int Health;
+  public float shootCooldown = 2f;
+
+    public float distanceRange = 5.0f;
+    public float visionRange = 5.0f; // New variable for following distance
+   
    public GameObject bulletPrefab;
 
    public Transform player_pos;
@@ -13,7 +18,7 @@ public abstract class Enemies_behavior : MonoBehaviour
    public Transform firePoint;
    public Vector2 Direction;
    private float LastShoot;
-   public float shootCooldown = 2f;
+   
    
    private SpriteRenderer spriteRenderer;
 
@@ -27,25 +32,65 @@ public abstract class Enemies_behavior : MonoBehaviour
     private Rigidbody2D rb;
     private bool isKnockedBack = false;
 
-    protected void Start()
+    protected void Awake()
     {
-        player_pos = GameObject.FindWithTag("Player")?.transform;
+        // Intenta encontrar al player si no está asignado
         if (Player == null)
         {
-            Player = player_pos;
+            FindPlayer();
         }
+        
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        
+        // Validar referencias críticas
+        if (firePoint == null) Debug.LogWarning($"FirePoint no asignado en {gameObject.name}");
+        if (bulletPrefab == null) Debug.LogWarning($"BulletPrefab no asignado en {gameObject.name}");
+
         StartCoroutine(ShootWithCooldown());
     }
+
+
+    void FindPlayer()
+    {
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        if (playerObj != null)
+        {
+            Player = playerObj.transform;
+        }
+    }
+
 
     protected virtual void MoveTowardsPlayer(float speed)
     {
         if (isKnockedBack) return;
 
-        Vector2 direction = (Player.position - transform.position).normalized;
-        transform.position = Vector2.MoveTowards(transform.position,new Vector2(Player.position.x,Player.position.y),speed*Time.deltaTime);
-        UpdateOrientation(direction);
+        // Si no hay player, intentamos buscarlo de nuevo o salimos
+        if (Player == null)
+        {
+            FindPlayer();
+            if (Player == null) {
+                // Debug.Log("Enemy: Player null, searching..."); // Commented to avoid spam
+                return;
+            } else {
+                 Debug.Log("Enemy: Player found!");
+            }
+        }
+
+        float distanceToPlayer = Vector3.Distance(transform.position, Player.position);
+        
+        // Debug.Log($"Enemy {gameObject.name}: Distance={distanceToPlayer}, Vision={visionRange}"); // Debug distance
+
+        if (distanceToPlayer < visionRange)
+        {
+            Vector2 direction = (Player.position - transform.position).normalized;
+            Vector2 target = new Vector2(Player.position.x, Player.position.y);
+            Vector2 newPos = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+            
+            transform.position = newPos; // Explicit assignment
+            
+            UpdateOrientation(direction);
+        }
     }
 
     public void ApplyKnockback(Vector2 direction, float force)
@@ -68,21 +113,19 @@ public abstract class Enemies_behavior : MonoBehaviour
     
     void UpdateOrientation(Vector2 moveInput)
     {
-        if (moveInput == Vector2.zero)
-        {
-            return;
-        }
+        if (moveInput == Vector2.zero) return;
+        if (spriteRenderer == null) return; 
 
         // --- Sprite Logic ---
         // Prioritize vertical sprites
         if (moveInput.y > 0.5f)
         {
-            spriteRenderer.sprite = spriteUp;
+            if(spriteUp != null) spriteRenderer.sprite = spriteUp;
             spriteRenderer.flipX = false;
         }
         else if (moveInput.y < -0.5f)
         {
-            spriteRenderer.sprite = spriteDown;
+            if(spriteDown != null) spriteRenderer.sprite = spriteDown;
             spriteRenderer.flipX = false;
         }
         // Horizontal sprites only if not moving much vertically
@@ -90,19 +133,22 @@ public abstract class Enemies_behavior : MonoBehaviour
         {
             if (moveInput.x > 0)
             {
-                spriteRenderer.sprite = spriteRight;
+                if(spriteRight != null) spriteRenderer.sprite = spriteRight;
                 spriteRenderer.flipX = false;
             }
             else if (moveInput.x < 0)
             {
-                spriteRenderer.sprite = spriteRight;
+                if(spriteRight != null) spriteRenderer.sprite = spriteRight;
                 spriteRenderer.flipX = true;
             }
         }
         
         // --- Rotation Logic for Shooting ---
-        float angle = Mathf.Atan2(moveInput.y, moveInput.x) * Mathf.Rad2Deg - 90f;
-        firePoint.rotation = Quaternion.Euler(0, 0, angle);
+        if (firePoint != null)
+        {
+            float angle = Mathf.Atan2(moveInput.y, moveInput.x) * Mathf.Rad2Deg - 90f;
+            firePoint.rotation = Quaternion.Euler(0, 0, angle);
+        }
     }
     
     public virtual void Hit(int damage)
@@ -117,8 +163,19 @@ public abstract class Enemies_behavior : MonoBehaviour
     
     protected virtual void shoot()
     {
-       GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-       bullet.GetComponent<Bullet>().isPlayerBullet = false; // Explicitly set as an enemy bullet
+        if (Player == null || firePoint == null || bulletPrefab == null) return;
+
+        float distanceToPlayer = Vector3.Distance(transform.position, Player.position);
+
+        if (distanceToPlayer < distanceRange)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Bullet bulletScript = bullet.GetComponent<Bullet>();
+            if (bulletScript != null)
+            {
+                bulletScript.isPlayerBullet = false; // Explicitly set as an enemy bullet
+            }
+        }
     }
 
     IEnumerator ShootWithCooldown()
@@ -132,4 +189,12 @@ public abstract class Enemies_behavior : MonoBehaviour
     
     
     
+    
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, distanceRange);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, visionRange);
+    }
 }

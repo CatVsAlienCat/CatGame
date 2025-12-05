@@ -15,7 +15,14 @@ public class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         Destroy(gameObject, lifeTime); // lifeTime is now set by WeaponController
 
-        rb.linearVelocity = transform.up * speed; // speed is now set by WeaponController
+        if (rb != null)
+        {
+            rb.linearVelocity = transform.up * speed;
+        }
+        else
+        {
+            Debug.LogError("Bullet: No se encontró Rigidbody2D en el objeto.");
+        }
     }
 
      void OnTriggerEnter2D(Collider2D other)
