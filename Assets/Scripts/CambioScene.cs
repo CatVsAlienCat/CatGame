@@ -14,7 +14,7 @@ public class CambioScene : MonoBehaviour
                 SceneManager.LoadScene(currentSceneIndex + 1);
             }
     }
-/*
+
     void Update()
     {
         Victoria();
@@ -34,5 +34,5 @@ public class CambioScene : MonoBehaviour
         }
         
     }
-    */
+    
 }

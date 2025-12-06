@@ -169,11 +169,6 @@ public abstract class Enemies_behavior : MonoBehaviour
     
     public virtual void Hit(int damage)
     {
-        if (isDying) return; // Ignore hits while dying
-
-        AudioManager.Instance.PlaySFX(hitSound, hitVolume);
-        this.Health -= damage;
-        if (this.Health <= 0)
         AudioManager.Instance.PlaySFX(hitSound);
         Health -= damage;
         if (Health <= 0)
