@@ -1,0 +1,757 @@
+fileFormatVersion: 2
+guid: b7394776f857be9b29fe95b8872bd161
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1586564162994951065
+    second: PokemonTilemapNoBG6_0
+  - first:
+      213: -8890103504447241675
+    second: PokemonTilemapNoBG6_1
+  - first:
+      213: 6817491542994014855
+    second: PokemonTilemapNoBG6_2
+  - first:
+      213: -283329141825481402
+    second: PokemonTilemapNoBG6_3
+  - first:
+      213: -7351752946717724542
+    second: PokemonTilemapNoBG6_4
+  - first:
+      213: 3867448748767205833
+    second: PokemonTilemapNoBG6_5
+  - first:
+      213: 2434916397602747057
+    second: PokemonTilemapNoBG6_6
+  - first:
+      213: -2077986261696021804
+    second: PokemonTilemapNoBG6_7
+  - first:
+      213: 798329960993651776
+    second: PokemonTilemapNoBG6_8
+  - first:
+      213: 630494661840106291
+    second: PokemonTilemapNoBG6_9
+  - first:
+      213: -5851164560550747478
+    second: PokemonTilemapNoBG6_10
+  - first:
+      213: 183469800152388940
+    second: PokemonTilemapNoBG6_11
+  - first:
+      213: -5973196304429339756
+    second: PokemonTilemapNoBG6_12
+  - first:
+      213: 2164044143054772290
+    second: PokemonTilemapNoBG6_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_0
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 3844
+        width: 95
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 993dda443bb940610800000000000000
+      internalID: 1586564162994951065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2467
+        width: 255
+        height: 450
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53287f8e6f100a480800000000000000
+      internalID: -8890103504447241675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_2
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 2207
+        width: 116
+        height: 450
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 782536f00789c9e50800000000000000
+      internalID: 6817491542994014855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1443
+        width: 256
+        height: 472
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 645d9fa85a9611cf0800000000000000
+      internalID: -283329141825481402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1219
+        width: 161
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 280757e65a359f990800000000000000
+      internalID: -7351752946717724542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_5
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 935
+        width: 134
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c95c497520fba530800000000000000
+      internalID: 3867448748767205833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_6
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 577
+        width: 158
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b2b2e8109f8ac120800000000000000
+      internalID: 2434916397602747057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_7
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 675
+        width: 107
+        height: 258
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4da777f21828923e0800000000000000
+      internalID: -2077986261696021804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 423
+        width: 93
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04cf39aaedc341b00800000000000000
+      internalID: 798329960993651776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_9
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 423
+        width: 96
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33372cfed87ffb800800000000000000
+      internalID: 630494661840106291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 295
+        width: 93
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa2a40e35dc7ccea0800000000000000
+      internalID: -5851164560550747478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_11
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 295
+        width: 96
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c455819afc0db8200800000000000000
+      internalID: 183469800152388940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_12
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 3
+        width: 90
+        height: 258
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49b20d4cb91fa1da0800000000000000
+      internalID: -5973196304429339756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_13
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 99
+        width: 65
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2485b09beaa380e10800000000000000
+      internalID: 2164044143054772290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_14
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 3659
+        width: 27
+        height: 57
+      alignment: 9
+      pivot: {x: 0.3717821, y: -3.5287445}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96e55750822886374b21196f0ba67f1b
+      internalID: -1291129543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1988
+        width: 96
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fceede10c4509924b3eee753d1a64d5
+      internalID: 1272600538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2148
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ca8e9cac576aaa4f95a8552d4851fd1
+      internalID: 592360867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_17
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 2148
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 491316543ee28ec5cbe0e7cbe0a1adb2
+      internalID: -357768747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_18
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 2148
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 283b8ad861f7413bb87d1f1c85ffa290
+      internalID: -303458701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1956
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0204e0e4a3edf8ff4ab06b3c79bca1e0
+      internalID: -1025604759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_20
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 3236
+        width: 50
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f511cf73ab46078a37eed3c57a4e73
+      internalID: 1839499496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_21
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 3252
+        width: 48
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01da9714a021994128256aa5d00ca684
+      internalID: -15344035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_22
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 3211
+        width: 48
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d35f7f4cbe6a2281fa3de70754f1a0e6
+      internalID: 309814756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_23
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 3252
+        width: 48
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a15f251418b7381691f05e9ee52e90a
+      internalID: -585347280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_24
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 3211
+        width: 48
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 822e35fcec4110a699282c37a5862222
+      internalID: 212900721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_25
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 3216
+        width: 11
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20bec4d4b96f1ca488b6d49657d5f063
+      internalID: -1419238348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d5c9fa5346215bc3187709d87eec612b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PokemonTilemapNoBG6_0: 1586564162994951065
+      PokemonTilemapNoBG6_1: -8890103504447241675
+      PokemonTilemapNoBG6_10: -5851164560550747478
+      PokemonTilemapNoBG6_11: 183469800152388940
+      PokemonTilemapNoBG6_12: -5973196304429339756
+      PokemonTilemapNoBG6_13: 2164044143054772290
+      PokemonTilemapNoBG6_14: -1291129543
+      PokemonTilemapNoBG6_15: 1272600538
+      PokemonTilemapNoBG6_16: 592360867
+      PokemonTilemapNoBG6_17: -357768747
+      PokemonTilemapNoBG6_18: -303458701
+      PokemonTilemapNoBG6_19: -1025604759
+      PokemonTilemapNoBG6_2: 6817491542994014855
+      PokemonTilemapNoBG6_20: 1839499496
+      PokemonTilemapNoBG6_21: -15344035
+      PokemonTilemapNoBG6_22: 309814756
+      PokemonTilemapNoBG6_23: -585347280
+      PokemonTilemapNoBG6_24: 212900721
+      PokemonTilemapNoBG6_25: -1419238348
+      PokemonTilemapNoBG6_3: -283329141825481402
+      PokemonTilemapNoBG6_4: -7351752946717724542
+      PokemonTilemapNoBG6_5: 3867448748767205833
+      PokemonTilemapNoBG6_6: 2434916397602747057
+      PokemonTilemapNoBG6_7: -2077986261696021804
+      PokemonTilemapNoBG6_8: 798329960993651776
+      PokemonTilemapNoBG6_9: 630494661840106291
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
