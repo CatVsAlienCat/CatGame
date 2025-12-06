@@ -226,6 +226,8 @@ public class PlayerMovement : MonoBehaviour
 
     // Shoot method removed - handled by WeaponController
 
+    public GameOverUI gameOverUI; // Reference to the UI script
+
     public void Hit(int damage)
     {
         Health -= damage;
@@ -234,7 +236,17 @@ public class PlayerMovement : MonoBehaviour
 
         if (this.Health <= 0)
         {
-            Destroy(gameObject);
+            // Instead of Destroy, we trigger Game Over
+            if (gameOverUI != null)
+            {
+                gameOverUI.ShowGameOver();
+                gameObject.SetActive(false); // Hide player
+            }
+            else
+            {
+                // Fallback if UI not assigned
+                Destroy(gameObject);
+            }
         }
     }
 
