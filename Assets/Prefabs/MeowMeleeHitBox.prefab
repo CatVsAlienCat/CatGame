@@ -72,7 +72,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.24, y: 0.12}
+    oldSize: {x: 0.16, y: 0.15}
     newSize: {x: 0.12, y: 0.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -95,10 +95,12 @@ MonoBehaviour:
   damage: 1
   lifeTime: 0.2
   isPlayerAttack: 1
+  knockbackForce: 0
   spriteRenderer: {fileID: -7006615060806896295}
   animationFrames:
-  - {fileID: -5779813252569257538, guid: 69c714665f9a25bee92167dee503c454, type: 3}
-  - {fileID: 4287226834708455694, guid: da15488294847e659a04a5b0c5f40bf2, type: 3}
+  - {fileID: -4283750593148206281, guid: 6d37ddd45e2db44c685dc89fddc92b27, type: 3}
+  - {fileID: -5437508646368065218, guid: e921754db0e211e4aa0eca1d67ade173, type: 3}
+  - {fileID: -7762726613588654957, guid: 9edf1bb52e1e71c9ab9ea0a276b460be, type: 3}
 --- !u!212 &-7006615060806896295
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -143,7 +145,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 1312016343800030913, guid: 71be7242bcef7b22ba484f3e12050a36, type: 3}
+  m_Sprite: {fileID: -4283750593148206281, guid: 6d37ddd45e2db44c685dc89fddc92b27, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

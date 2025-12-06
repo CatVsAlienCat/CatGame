@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private SpriteRenderer spriteRenderer;
+    private SpriteRenderer weaponRenderer; // New secondary renderer
 
     [Header("Health")]
     public int maxHealth = 5;
@@ -52,6 +53,21 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        // Create Weapon Sprite Child
+        Transform weaponTransform = transform.Find("WeaponSprite");
+        if (weaponTransform == null)
+        {
+            GameObject weaponObj = new GameObject("WeaponSprite");
+            weaponObj.transform.parent = transform;
+            weaponObj.transform.localPosition = Vector3.zero;
+            weaponRenderer = weaponObj.AddComponent<SpriteRenderer>();
+            weaponRenderer.sortingOrder = spriteRenderer.sortingOrder + 1; // Ensure on top
+        }
+        else
+        {
+            weaponRenderer = weaponTransform.GetComponent<SpriteRenderer>();
+        }
 
         // Initialize overrides with defaults
         ResetWeaponSprites();
@@ -125,47 +141,72 @@ public class PlayerMovement : MonoBehaviour
 
         // --- Sprite Logic ---
         
-        // --- Sprite Logic ---
-        
-        // Determine which set of sprites to use
-        Sprite[] targetUp = isAttacking && attackUp != null && attackUp.Length > 0 ? attackUp : (currentWalkUp ?? walkUpSprites);
-        Sprite[] targetDown = isAttacking && attackDown != null && attackDown.Length > 0 ? attackDown : (currentWalkDown ?? walkDownSprites);
-        Sprite[] targetSide = isAttacking && attackSide != null && attackSide.Length > 0 ? attackSide : (currentWalkSide ?? walkSideSprites);
+        // 1. Base Body Logic (Always Cat)
+        Sprite baseSprite = null;
+        bool flip = false;
 
-        // UP
-        if (moveInput.y > 0.5f)
+        if (moveInput.y > 0.5f) // UP
         {
-            spriteRenderer.flipX = false;
-            if (targetUp.Length > 0) 
-            {
-                spriteRenderer.sprite = targetUp[currentFrame % targetUp.Length];
-            }
+            if (walkUpSprites.Length > 0) baseSprite = walkUpSprites[currentFrame % walkUpSprites.Length];
+            flip = false;
         }
-        // DOWN
-        else if (moveInput.y < -0.5f)
+        else if (moveInput.y < -0.5f) // DOWN
         {
-            spriteRenderer.flipX = false;
-            if (targetDown.Length > 0)
-            {
-                spriteRenderer.sprite = targetDown[currentFrame % targetDown.Length];
-            }
+            if (walkDownSprites.Length > 0) baseSprite = walkDownSprites[currentFrame % walkDownSprites.Length];
+            flip = false;
         }
-        // SIDEWAYS (Right or Left)
-        else
+        else // SIDE or Idle
         {
-            if (targetSide.Length > 0)
+            if (walkSideSprites.Length > 0) baseSprite = walkSideSprites[currentFrame % walkSideSprites.Length];
+            
+            if (moveInput.x > 0) flip = false;
+            else if (moveInput.x < 0) flip = true;
+        }
+
+        if (baseSprite != null)
+        {
+            spriteRenderer.sprite = baseSprite;
+            spriteRenderer.flipX = flip;
+        }
+
+        // 2. Weapon Overlay Logic
+        if (weaponRenderer != null)
+        {
+            Sprite weaponSprite = null;
+            
+            // Determine which weapon set to use (Attack > Walk > Idle/Null)
+            Sprite[] targetWeaponSet = null;
+
+            if (moveInput.y > 0.5f) // UP
             {
-                spriteRenderer.sprite = targetSide[currentFrame % targetSide.Length];
+                targetWeaponSet = isAttacking && attackUp != null && attackUp.Length > 0 ? attackUp : currentWalkUp;
+            }
+            else if (moveInput.y < -0.5f) // DOWN
+            {
+                 targetWeaponSet = isAttacking && attackDown != null && attackDown.Length > 0 ? attackDown : currentWalkDown;
+            }
+            else // SIDE
+            {
+                 targetWeaponSet = isAttacking && attackSide != null && attackSide.Length > 0 ? attackSide : currentWalkSide;
             }
 
-            if (moveInput.x > 0)
+            // Apply Weapon Sprite
+            if (targetWeaponSet != null && targetWeaponSet.Length > 0)
             {
-                spriteRenderer.flipX = false;
+                weaponSprite = targetWeaponSet[currentFrame % targetWeaponSet.Length];
             }
-            else if (moveInput.x < 0)
+
+            weaponRenderer.sprite = weaponSprite;
+            weaponRenderer.flipX = flip; // Sync flip
+            
+            // Enforce Transform hierarchy and scale
+            if (weaponRenderer.transform.parent != transform)
             {
-                spriteRenderer.flipX = true;
+                weaponRenderer.transform.parent = transform;
             }
+            weaponRenderer.transform.localPosition = Vector3.zero; 
+            weaponRenderer.transform.localScale = Vector3.one; // Inherit parent scale perfectly
+            weaponRenderer.transform.localRotation = Quaternion.identity;
         }
 
         // --- Rotation Logic for Shooting ---

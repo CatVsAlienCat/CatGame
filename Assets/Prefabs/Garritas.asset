@@ -21,4 +21,15 @@ MonoBehaviour:
   isMelee: 1
   spawnDistance: 0.3
   knockbackForce: 5
+  walkUp: []
+  walkDown:
+  - {fileID: -4283750593148206281, guid: 43bf3c822e8c22126b1577c1982f8c24, type: 3}
+  walkSide:
+  - {fileID: -4283750593148206281, guid: 6e7ef0c63589528db8c7e40d8740c5cb, type: 3}
+  attackUp: []
+  attackDown: []
+  attackSide: []
+  attackDuration: 0.5
   icon: {fileID: -5779813252569257538, guid: 69c714665f9a25bee92167dee503c454, type: 3}
+  shootSound: {fileID: 8300000, guid: ec7a1b6097f49e1c58a0adb4da080935, type: 3}
+  shootVolume: 0.431

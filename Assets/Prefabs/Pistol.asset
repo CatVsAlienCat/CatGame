@@ -21,4 +21,22 @@ MonoBehaviour:
   isMelee: 0
   spawnDistance: 0
   knockbackForce: 1
+  walkUp:
+  - {fileID: 5007077348494906188, guid: 2e0a666073fe405db81e4fddbec616d3, type: 3}
+  walkDown:
+  - {fileID: -6058569828747484009, guid: 9fd9f3f4f59bc5dd09ffabe949f00350, type: 3}
+  walkSide:
+  - {fileID: -1833498442890087755, guid: c1beba9000bea3fbe99c0f7ac81acf53, type: 3}
+  attackUp:
+  - {fileID: -4907726806901334288, guid: 51ab33e03b19cbcf69dcc368e4fec00b, type: 3}
+  - {fileID: -6358323109958342405, guid: 8480c732d94355b3c98136b516af2cc8, type: 3}
+  attackDown:
+  - {fileID: -169536389763018769, guid: e9a8356ba4b4dfe8ab160f7cffa99324, type: 3}
+  - {fileID: -6006908825875528946, guid: c5fe4186f0e57dc0e971a684e829a06c, type: 3}
+  attackSide:
+  - {fileID: -6756636413301508152, guid: 42f595364aad35b09aa5aca2dfe6aeaf, type: 3}
+  - {fileID: 2183115624783141124, guid: bfea3e359d8d0f6ccbfc59eb553c1a71, type: 3}
+  attackDuration: 0.5
   icon: {fileID: 2291270967926626937, guid: 41ceaebd174743246b904343d4b77bda, type: 3}
+  shootSound: {fileID: 8300000, guid: 4fc14bfc7defeea4b9c6d78de6a71b8e, type: 3}
+  shootVolume: 1
