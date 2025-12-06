@@ -219,3 +219,11 @@ MonoBehaviour:
   spriteUp: {fileID: 2147978889741378756, guid: d23181b729a32f04c85b6a60ceaa9cff, type: 3}
   spriteDown: {fileID: 1035222173013682190, guid: 38482687e8ccc4743988b40560ea3794, type: 3}
   spriteRight: {fileID: 3086980109193034273, guid: 0e4d2a59c1acce5469dd7621def17422, type: 3}
+  hitSound: {fileID: 8300000, guid: f21c9203770c6c442bb8d4966148a01f, type: 3}
+  hitVolume: 1
+  shootSound: {fileID: 8300000, guid: 4fc14bfc7defeea4b9c6d78de6a71b8e, type: 3}
+  shootVolume: 0.511
+  healthPickupPrefab: {fileID: 0}
+  dropChance: 0.2
+  deathSprites: []
+  deathAnimationSpeed: 0.1
