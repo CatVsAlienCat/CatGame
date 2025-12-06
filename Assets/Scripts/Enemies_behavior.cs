@@ -6,10 +6,10 @@ public abstract class Enemies_behavior : MonoBehaviour
 {
    public  Transform Player;
    public int Health;
-  public float shootCooldown = 2f;
+  public float shootCooldown;
 
-    public float distanceRange = 5.0f;
-    public float visionRange = 5.0f; // New variable for following distance
+    public float distanceRange;
+    public float visionRange;
    
    public GameObject bulletPrefab;
 
@@ -63,7 +63,7 @@ public abstract class Enemies_behavior : MonoBehaviour
         if (firePoint == null) Debug.LogWarning($"FirePoint no asignado en {gameObject.name}");
         if (bulletPrefab == null) Debug.LogWarning($"BulletPrefab no asignado en {gameObject.name}");
 
-        StartCoroutine(ShootWithCooldown());
+        StartCoroutine(ShootWithCooldown(shootCooldown));
     }
 
 
@@ -77,7 +77,7 @@ public abstract class Enemies_behavior : MonoBehaviour
     }
 
 
-    protected virtual void MoveTowardsPlayer(float speed)
+    protected virtual void MoveTowardsPlayer(float speed, float distanceRange, float visionRange)
     {
         if (isKnockedBack || isDying) return;
 
@@ -169,11 +169,17 @@ public abstract class Enemies_behavior : MonoBehaviour
     
     public virtual void Hit(int damage)
     {
+<<<<<<< Updated upstream
         if (isDying) return; // Ignore hits while dying
 
         AudioManager.Instance.PlaySFX(hitSound, hitVolume);
         this.Health -= damage;
         if (this.Health <= 0)
+=======
+        AudioManager.Instance.PlaySFX(hitSound);
+        Health -= damage;
+        if (Health <= 0)
+>>>>>>> Stashed changes
         {
             StartCoroutine(DieRoutine());
         }
@@ -231,7 +237,7 @@ public abstract class Enemies_behavior : MonoBehaviour
         }
     }
 
-    IEnumerator ShootWithCooldown()
+    protected virtual IEnumerator ShootWithCooldown(float shootCooldown)
     {
         while (true)
         {
