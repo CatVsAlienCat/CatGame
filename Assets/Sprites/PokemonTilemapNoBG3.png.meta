@@ -274,9 +274,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 3193
-        width: 200
-        height: 232
+        y: 3199
+        width: 189
+        height: 226
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,9 +384,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1985
-        width: 224
-        height: 572
+        y: 1995
+        width: 213
+        height: 199
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1171,6 +1171,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG3_43
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2206
+        width: 213
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d78332a6e81b449dfb4c03d39a4fff4b
+      internalID: -72568595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG3_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2406
+        width: 157
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b92dc67c933c85b319de6f08adb17ebc
+      internalID: -1459943959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1223,6 +1267,8 @@ TextureImporter:
       PokemonTilemapNoBG3_40: -6009103384303611411
       PokemonTilemapNoBG3_41: -4481873597380731840
       PokemonTilemapNoBG3_42: 6020193748589277218
+      PokemonTilemapNoBG3_43: -72568595
+      PokemonTilemapNoBG3_44: -1459943959
       PokemonTilemapNoBG3_5: -1327940962933413266
       PokemonTilemapNoBG3_6: 3304802840489270995
       PokemonTilemapNoBG3_7: -2116627835252200902

@@ -697,7 +697,7 @@ TextureImporter:
         width: 11
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -706,6 +706,28 @@ TextureImporter:
       bones: []
       spriteID: 20bec4d4b96f1ca488b6d49657d5f063
       internalID: -1419238348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_26
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 4051
+        width: 69
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7718ece94590d12b298a31b43e746ebd
+      internalID: -1581376978
       vertices: []
       indices: 
       edges: []
@@ -743,6 +765,7 @@ TextureImporter:
       PokemonTilemapNoBG6_23: -585347280
       PokemonTilemapNoBG6_24: 212900721
       PokemonTilemapNoBG6_25: -1419238348
+      PokemonTilemapNoBG6_26: -1581376978
       PokemonTilemapNoBG6_3: -283329141825481402
       PokemonTilemapNoBG6_4: -7351752946717724542
       PokemonTilemapNoBG6_5: 3867448748767205833
