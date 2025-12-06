@@ -35,7 +35,15 @@ public abstract class Enemies_behavior : MonoBehaviour
     [Range(0f, 1f)]
     public float shootVolume = 1f;
 
+    [Header("Drops")]
+    public GameObject healthPickupPrefab;
+    [Range(0f, 1f)]
+    public float dropChance = 0.2f;
 
+    [Header("Death Animation")]
+    public Sprite[] deathSprites;
+    public float deathAnimationSpeed = 0.1f;
+    protected bool isDying = false;
 
     private Rigidbody2D rb;
     private bool isKnockedBack = false;
@@ -71,7 +79,7 @@ public abstract class Enemies_behavior : MonoBehaviour
 
     protected virtual void MoveTowardsPlayer(float speed)
     {
-        if (isKnockedBack) return;
+        if (isKnockedBack || isDying) return;
 
         // Si no hay player, intentamos buscarlo de nuevo o salimos
         if (Player == null)
@@ -161,18 +169,53 @@ public abstract class Enemies_behavior : MonoBehaviour
     
     public virtual void Hit(int damage)
     {
+        if (isDying) return; // Ignore hits while dying
+
         AudioManager.Instance.PlaySFX(hitSound, hitVolume);
         this.Health -= damage;
         if (this.Health <= 0)
         {
-            Destroy(gameObject);
+            StartCoroutine(DieRoutine());
+        }
+    }
+
+    protected IEnumerator DieRoutine()
+    {
+        isDying = true;
+        
+        // Disable physics and collision to prevent further interaction
+        if (rb != null) rb.simulated = false;
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = false;
+
+        // Play drop logic immediately
+        TryDropItem();
+
+        // Play clean animation if sprites are assigned
+        if (deathSprites != null && deathSprites.Length > 0 && spriteRenderer != null)
+        {
+            foreach (var sprite in deathSprites)
+            {
+                spriteRenderer.sprite = sprite;
+                yield return new WaitForSeconds(deathAnimationSpeed);
+            }
+        }
+
+        Destroy(gameObject);
+    }
+
+    protected virtual void TryDropItem()
+    {
+        if (healthPickupPrefab != null && Random.value <= dropChance)
+        {
+            Instantiate(healthPickupPrefab, transform.position, Quaternion.identity);
         }
     }
 
     
     protected virtual void shoot()
     {
-        if (Player == null || firePoint == null || bulletPrefab == null) return;
+        if (Player == null || firePoint == null || bulletPrefab == null || isDying) return;
 
         float distanceToPlayer = Vector3.Distance(transform.position, Player.position);
 

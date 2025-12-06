@@ -18,6 +18,16 @@ public class WeaponController : MonoBehaviour
         if (weapons.Count > 0)
         {
             OnWeaponChanged?.Invoke(weapons[currentWeaponIndex]);
+            UpdatePlayerVisuals();
+        }
+    }
+
+    void UpdatePlayerVisuals()
+    {
+        PlayerMovement player = GetComponent<PlayerMovement>();
+        if (player != null && currentWeaponIndex < weapons.Count)
+        {
+            player.SetWeaponSprites(weapons[currentWeaponIndex]);
         }
     }
 
@@ -59,6 +69,7 @@ public class WeaponController : MonoBehaviour
             currentWeaponIndex--;
             if (currentWeaponIndex < 0) currentWeaponIndex = weapons.Count - 1;
             OnWeaponChanged?.Invoke(weapons[currentWeaponIndex]);
+            UpdatePlayerVisuals();
         }
 
         // Next Weapon
@@ -67,6 +78,7 @@ public class WeaponController : MonoBehaviour
             currentWeaponIndex++;
             if (currentWeaponIndex >= weapons.Count) currentWeaponIndex = 0;
             OnWeaponChanged?.Invoke(weapons[currentWeaponIndex]);
+            UpdatePlayerVisuals();
         }
 
         // Number Keys 1-9
@@ -76,6 +88,7 @@ public class WeaponController : MonoBehaviour
             {
                 currentWeaponIndex = i;
                 OnWeaponChanged?.Invoke(weapons[currentWeaponIndex]);
+                UpdatePlayerVisuals();
             }
         }
     }
@@ -86,6 +99,13 @@ public class WeaponController : MonoBehaviour
         if (currentWeapon.bulletPrefab == null || firePoint == null) return;
 
         AudioManager.Instance.PlaySFX(currentWeapon.shootSound, currentWeapon.shootVolume);
+
+        // Trigger Attack Animation
+        PlayerMovement player = GetComponent<PlayerMovement>();
+        if (player != null)
+        {
+            player.TriggerAttackAnimation(currentWeapon.attackDuration);
+        }
 
         if (currentWeapon.isMelee)
         {
