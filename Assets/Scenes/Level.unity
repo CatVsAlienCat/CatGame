@@ -3768,7 +3768,11 @@ MonoBehaviour:
   musicSourceA: {fileID: 1811858131}
   musicSourceB: {fileID: 486099934}
   sfxSource: {fileID: 1202119050}
-  musicPlaylist: []
+  musicPlaylist:
+  - clip: {fileID: 8300000, guid: b7fe479e39ac8dd859ec6a7299f82e6a, type: 3}
+    useClipping: 0
+    startTime: 0
+    endTime: 0
   musicVolume: 1
   fadeDuration: 2
 --- !u!4 &2067025589
