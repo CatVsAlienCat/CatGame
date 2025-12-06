@@ -21,4 +21,22 @@ MonoBehaviour:
   isMelee: 0
   spawnDistance: 0
   knockbackForce: 1
+  walkUp:
+  - {fileID: 21300000, guid: 70e4186eae66e40ea95c583eb43ab32b, type: 3}
+  walkDown:
+  - {fileID: 21300000, guid: af61bc805a3b6b4a79aef88601d0db3d, type: 3}
+  walkSide:
+  - {fileID: 21300000, guid: d496be46548269093819b90b33bd25e4, type: 3}
+  attackUp:
+  - {fileID: 21300000, guid: d72362e55667ccdc395dea0063f00ef6, type: 3}
+  - {fileID: 21300000, guid: d6d6a30015c4beea2961f98d8cb2967b, type: 3}
+  attackDown:
+  - {fileID: 21300000, guid: b5da193871d0ba297829365863add8eb, type: 3}
+  - {fileID: 21300000, guid: 9c34870b463217a77857b13e8bf57933, type: 3}
+  attackSide:
+  - {fileID: 21300000, guid: 5b27cc179c8a930548c324c3c33f114e, type: 3}
+  - {fileID: 21300000, guid: 1dc6a56f33de8bb6c985136457bc2dd2, type: 3}
+  attackDuration: 0.2
   icon: {fileID: 2291270967926626937, guid: 41ceaebd174743246b904343d4b77bda, type: 3}
+  shootSound: {fileID: 8300000, guid: 4fc14bfc7defeea4b9c6d78de6a71b8e, type: 3}
+  shootVolume: 1

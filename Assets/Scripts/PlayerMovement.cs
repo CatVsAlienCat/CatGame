@@ -48,8 +48,8 @@ public class PlayerMovement : MonoBehaviour
     // public GameObject bulletPrefab; // Removed - handled by WeaponController
     public Transform firePoint;     
 
-    // Start is called before the first frame update
-    void Start()
+    // Awake is called when the script instance is being loaded
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -71,7 +71,10 @@ public class PlayerMovement : MonoBehaviour
 
         // Initialize overrides with defaults
         ResetWeaponSprites();
+    }
 
+    void Start()
+    {
         Health = maxHealth;
         OnHealthChanged?.Invoke(Health, maxHealth);
     }

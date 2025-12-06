@@ -188,7 +188,6 @@ MonoBehaviour:
   spriteUp: {fileID: -2281157736346680269, guid: 18bb73e620554f042b3cd5788b3c25a3, type: 3}
   spriteDown: {fileID: -8247106587120222454, guid: 85eac872725b0b14d8492f65856a24ad, type: 3}
   spriteRight: {fileID: -3264973341766615377, guid: 4bfe06a47ac5bb24eaf431abce1310b5, type: 3}
-<<<<<<< Updated upstream
   hitSound: {fileID: 8300000, guid: f21c9203770c6c442bb8d4966148a01f, type: 3}
   hitVolume: 1
   shootSound: {fileID: 8300000, guid: 4fc14bfc7defeea4b9c6d78de6a71b8e, type: 3}
@@ -197,10 +196,8 @@ MonoBehaviour:
   dropChance: 0.2
   deathSprites: []
   deathAnimationSpeed: 0.1
-=======
   hitSound: {fileID: 0}
   shootSound: {fileID: 0}
->>>>>>> Stashed changes
 --- !u!1 &7773892309404663369
 GameObject:
   m_ObjectHideFlags: 0
