@@ -12110,7 +12110,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
+<<<<<<< HEAD
 --- !u!1 &1526229071
+=======
+--- !u!1 &1507826265
+>>>>>>> 9327adb4a1995ecf8decb10995dd82df548bb994
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12118,21 +12122,34 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 1526229073}
   - component: {fileID: 1526229072}
   m_Layer: 0
   m_Name: speedboat_red_0001-sheet_0 (1)
+=======
+  - component: {fileID: 1507826267}
+  - component: {fileID: 1507826266}
+  m_Layer: 0
+  m_Name: AudioManager
+>>>>>>> 9327adb4a1995ecf8decb10995dd82df548bb994
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!212 &1526229072
 SpriteRenderer:
+=======
+--- !u!114 &1507826266
+MonoBehaviour:
+>>>>>>> 9327adb4a1995ecf8decb10995dd82df548bb994
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1526229071}
   m_Enabled: 1
   m_CastShadows: 0
@@ -12183,11 +12200,31 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1526229073
+=======
+  m_GameObject: {fileID: 1507826265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423082469085bbdb196abffe77427ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSourceA: {fileID: 0}
+  musicSourceB: {fileID: 0}
+  sfxSource: {fileID: 0}
+  musicPlaylist:
+  - clip: {fileID: 8300000, guid: 01bea3f547609f242a4abfe3f610dba8, type: 3}
+    useClipping: 0
+    startTime: 0
+    endTime: 0
+  musicVolume: 1
+  fadeDuration: 2
+--- !u!4 &1507826267
+>>>>>>> 9327adb4a1995ecf8decb10995dd82df548bb994
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1526229071}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -12195,6 +12232,16 @@ Transform:
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+=======
+  m_GameObject: {fileID: 1507826265}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 51481969}
+>>>>>>> 9327adb4a1995ecf8decb10995dd82df548bb994
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1532438033
@@ -16005,6 +16052,7 @@ SceneRoots:
   - {fileID: 1940923696}
   - {fileID: 1247826090}
   - {fileID: 1229875989}
+<<<<<<< HEAD
   - {fileID: 611993543}
   - {fileID: 364094622}
   - {fileID: 1313368053}
@@ -16039,3 +16087,8 @@ SceneRoots:
   - {fileID: 1414959733}
   - {fileID: 68266774}
   - {fileID: 810435149}
+=======
+=======
+  - {fileID: 1507826267}
+>>>>>>> Stashed changes
+>>>>>>> 9327adb4a1995ecf8decb10995dd82df548bb994
