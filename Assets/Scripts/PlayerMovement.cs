@@ -25,6 +25,19 @@ public class PlayerMovement : MonoBehaviour
     public Sprite[] walkDownSprites;
     public Sprite[] walkSideSprites; // Used for both Right and Left
 
+    // Override Lists (from Weapon)
+    private Sprite[] currentWalkUp;
+    private Sprite[] currentWalkDown;
+    private Sprite[] currentWalkSide;
+    
+    // Attack Sprite Lists
+    private Sprite[] attackUp;
+    private Sprite[] attackDown;
+    private Sprite[] attackSide;
+    
+    private bool isAttacking = false;
+    private float attackTimer = 0f;
+
     [Header("Audio")]
     public AudioClip[] footstepSounds;
     [Range(0f, 1f)]
@@ -40,6 +53,9 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
+        // Initialize overrides with defaults
+        ResetWeaponSprites();
+
         Health = maxHealth;
         OnHealthChanged?.Invoke(Health, maxHealth);
     }
@@ -54,6 +70,15 @@ public class PlayerMovement : MonoBehaviour
         moveInput = new Vector2(moveX, moveY).normalized;
 
         // Calculate Animation Frame
+        if (isAttacking)
+        {
+            attackTimer -= Time.deltaTime;
+            if (attackTimer <= 0)
+            {
+                isAttacking = false;
+            }
+        }
+        
         HandleAnimationFrame();
 
         // Update Sprite image and rotation based on input
@@ -100,31 +125,37 @@ public class PlayerMovement : MonoBehaviour
 
         // --- Sprite Logic ---
         
+        // --- Sprite Logic ---
+        
+        // Determine which set of sprites to use
+        Sprite[] targetUp = isAttacking && attackUp != null && attackUp.Length > 0 ? attackUp : (currentWalkUp ?? walkUpSprites);
+        Sprite[] targetDown = isAttacking && attackDown != null && attackDown.Length > 0 ? attackDown : (currentWalkDown ?? walkDownSprites);
+        Sprite[] targetSide = isAttacking && attackSide != null && attackSide.Length > 0 ? attackSide : (currentWalkSide ?? walkSideSprites);
+
         // UP
         if (moveInput.y > 0.5f)
         {
             spriteRenderer.flipX = false;
-            if (walkUpSprites.Length > 0) 
+            if (targetUp.Length > 0) 
             {
-                // The % operator ensures we loop back to 0 if currentFrame exceeds array length
-                spriteRenderer.sprite = walkUpSprites[currentFrame % walkUpSprites.Length];
+                spriteRenderer.sprite = targetUp[currentFrame % targetUp.Length];
             }
         }
         // DOWN
         else if (moveInput.y < -0.5f)
         {
             spriteRenderer.flipX = false;
-            if (walkDownSprites.Length > 0)
+            if (targetDown.Length > 0)
             {
-                spriteRenderer.sprite = walkDownSprites[currentFrame % walkDownSprites.Length];
+                spriteRenderer.sprite = targetDown[currentFrame % targetDown.Length];
             }
         }
         // SIDEWAYS (Right or Left)
         else
         {
-            if (walkSideSprites.Length > 0)
+            if (targetSide.Length > 0)
             {
-                spriteRenderer.sprite = walkSideSprites[currentFrame % walkSideSprites.Length];
+                spriteRenderer.sprite = targetSide[currentFrame % targetSide.Length];
             }
 
             if (moveInput.x > 0)
@@ -160,6 +191,56 @@ public class PlayerMovement : MonoBehaviour
         if (this.Health <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    public void Heal(int amount)
+    {
+        Health += amount;
+        if (Health > maxHealth) Health = maxHealth;
+        OnHealthChanged?.Invoke(Health, maxHealth);
+    }
+
+    public void SetWeaponSprites(WeaponData weapon)
+    {
+        if (weapon != null)
+        {
+            // If weapon has sprites, use them. Else null (fallback to default in UpdateOrientation)
+            currentWalkUp = (weapon.walkUp != null && weapon.walkUp.Length > 0) ? weapon.walkUp : null;
+            currentWalkDown = (weapon.walkDown != null && weapon.walkDown.Length > 0) ? weapon.walkDown : null;
+            currentWalkSide = (weapon.walkSide != null && weapon.walkSide.Length > 0) ? weapon.walkSide : null;
+
+            attackUp = weapon.attackUp;
+            attackDown = weapon.attackDown;
+            attackSide = weapon.attackSide;
+        }
+        else
+        {
+            ResetWeaponSprites();
+        }
+    }
+
+    public void ResetWeaponSprites()
+    {
+        currentWalkUp = null;
+        currentWalkDown = null;
+        currentWalkSide = null;
+        attackUp = null;
+        attackDown = null;
+        attackSide = null;
+    }
+
+    public void TriggerAttackAnimation(float duration)
+    {
+        isAttacking = true;
+        attackTimer = duration;
+        // Reset frame to 0 to start attack animation from start? 
+        // Or keep walking frame? Usually attack is distinct. 
+        // check if we have attack sprites first
+        if (attackUp != null || attackDown != null || attackSide != null)
+        {
+             // Optional: reset frame index if you want animation to restart
+             // currentFrame = 0; 
         }
     }
 }

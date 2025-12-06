@@ -11,7 +11,21 @@ public class WeaponData : ScriptableObject
     public float bulletLifeTime = 2f;
     public bool isMelee = false;
     public float spawnDistance = 0f; // Distance from player center
+
     public float knockbackForce = 5f;
+
+    [Header("Player Visuals (Equipped)")]
+    public Sprite[] walkUp;
+    public Sprite[] walkDown;
+    public Sprite[] walkSide;
+
+    [Header("Player Visuals (Activated)")]
+    public Sprite[] attackUp;
+    public Sprite[] attackDown;
+    public Sprite[] attackSide;
+    public float attackDuration = 0.2f;
+
+    [Header("UI & Audio")]
     public Sprite icon;
     public AudioClip shootSound;
     [Range(0f, 1f)]
