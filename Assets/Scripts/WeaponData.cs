@@ -14,4 +14,6 @@ public class WeaponData : ScriptableObject
     public float knockbackForce = 5f;
     public Sprite icon;
     public AudioClip shootSound;
+    [Range(0f, 1f)]
+    public float shootVolume = 1f;
 }

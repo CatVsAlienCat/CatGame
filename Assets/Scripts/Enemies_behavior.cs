@@ -29,7 +29,11 @@ public abstract class Enemies_behavior : MonoBehaviour
 
     [Header("Audio")]
     public AudioClip hitSound;
+    [Range(0f, 1f)]
+    public float hitVolume = 1f;
     public AudioClip shootSound;
+    [Range(0f, 1f)]
+    public float shootVolume = 1f;
 
 
 
@@ -157,7 +161,7 @@ public abstract class Enemies_behavior : MonoBehaviour
     
     public virtual void Hit(int damage)
     {
-        AudioManager.Instance.PlaySFX(hitSound);
+        AudioManager.Instance.PlaySFX(hitSound, hitVolume);
         this.Health -= damage;
         if (this.Health <= 0)
         {
@@ -174,7 +178,7 @@ public abstract class Enemies_behavior : MonoBehaviour
 
         if (distanceToPlayer < distanceRange)
         {
-            AudioManager.Instance.PlaySFX(shootSound);
+            AudioManager.Instance.PlaySFX(shootSound, shootVolume);
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Bullet bulletScript = bullet.GetComponent<Bullet>();
             if (bulletScript != null)

@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Audio")]
     public AudioClip[] footstepSounds;
+    [Range(0f, 1f)]
+    public float footstepVolume = 1f;
 
     [Header("Combat")]
     // public GameObject bulletPrefab; // Removed - handled by WeaponController
@@ -75,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
                 // We don't limit the frame here, we use modulo (%) later 
                 // to wrap around whatever array length we are using
 
-                AudioManager.Instance.PlayRandomSFX(footstepSounds);
+                AudioManager.Instance.PlayRandomSFX(footstepSounds, footstepVolume);
             }
         }
         else
