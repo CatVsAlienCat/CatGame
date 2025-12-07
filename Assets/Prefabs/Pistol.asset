@@ -37,6 +37,6 @@ MonoBehaviour:
   - {fileID: -6756636413301508152, guid: 42f595364aad35b09aa5aca2dfe6aeaf, type: 3}
   - {fileID: 2183115624783141124, guid: bfea3e359d8d0f6ccbfc59eb553c1a71, type: 3}
   attackDuration: 0.5
-  icon: {fileID: 2291270967926626937, guid: 41ceaebd174743246b904343d4b77bda, type: 3}
+  icon: {fileID: 6879118450950661895, guid: 7b0a77cb912dbf440918f93daf663968, type: 3}
   shootSound: {fileID: 8300000, guid: 4fc14bfc7defeea4b9c6d78de6a71b8e, type: 3}
   shootVolume: 1

@@ -110,7 +110,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 15
   m_Sprite: {fileID: 1035222173013682190, guid: 38482687e8ccc4743988b40560ea3794, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -223,9 +223,8 @@ MonoBehaviour:
   hitVolume: 1
   shootSound: {fileID: 8300000, guid: 4fc14bfc7defeea4b9c6d78de6a71b8e, type: 3}
   shootVolume: 0.511
-  healthPickupPrefab: {fileID: 0}
+  healthPickupPrefab: {fileID: 1246148988352977053, guid: 8086a51a2f7589fd2841435d8c141e57, type: 3}
   dropChance: 0.2
-  deathSprites: []
-  deathAnimationSpeed: 0.1
-  hitSound: {fileID: 0}
-  shootSound: {fileID: 0}
+  deathSprites:
+  - {fileID: 1234042283337828366, guid: 6827667f3e232a94bb8ea4fc0335f269, type: 3}
+  deathAnimationSpeed: 0.5

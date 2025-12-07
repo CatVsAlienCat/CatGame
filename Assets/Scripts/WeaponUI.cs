@@ -11,6 +11,12 @@ public class WeaponUI : MonoBehaviour
         if (weaponController != null)
         {
             weaponController.OnWeaponChanged += UpdateUI;
+            
+            // Manually update UI on startup to ensure icon shows
+            if (weaponController.weapons != null && weaponController.weapons.Count > 0)
+            {
+                UpdateUI(weaponController.weapons[0]);
+            }
         }
     }
 

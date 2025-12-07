@@ -30,6 +30,6 @@ MonoBehaviour:
   attackDown: []
   attackSide: []
   attackDuration: 0.5
-  icon: {fileID: -5779813252569257538, guid: 69c714665f9a25bee92167dee503c454, type: 3}
+  icon: {fileID: 8001869892075530964, guid: 752025b91399db41eb856352dbc4c37b, type: 3}
   shootSound: {fileID: 8300000, guid: ec7a1b6097f49e1c58a0adb4da080935, type: 3}
   shootVolume: 0.431
