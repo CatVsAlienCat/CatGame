@@ -132,6 +132,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -205,13 +231,13 @@ TextureImporter:
       name: PokemonTilemapNoBG1_3
       rect:
         serializedVersion: 2
-        x: 6
-        y: 2078
-        width: 212
-        height: 444
+        x: 7
+        y: 2083
+        width: 210
+        height: 438
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 231}
       customData: 
       outline: []
       physicsShape: []
@@ -486,6 +512,7 @@ TextureImporter:
       PokemonTilemapNoBG1_12: -4375357640403761866
       PokemonTilemapNoBG1_13: -1442912605
       PokemonTilemapNoBG1_14: 1795816696
+      PokemonTilemapNoBG1_15: -96730663
       PokemonTilemapNoBG1_2: -8031283895323264370
       PokemonTilemapNoBG1_3: 868041600100793070
       PokemonTilemapNoBG1_4: -4638383002714288573
