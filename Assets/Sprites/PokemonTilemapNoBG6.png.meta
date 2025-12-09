@@ -135,6 +135,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -320,8 +346,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 423
-        width: 93
-        height: 102
+        width: 92
+        height: 77
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,8 +368,8 @@ TextureImporter:
         serializedVersion: 2
         x: 159
         y: 423
-        width: 96
-        height: 102
+        width: 95
+        height: 79
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,7 +391,7 @@ TextureImporter:
         x: 0
         y: 295
         width: 93
-        height: 102
+        height: 77
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -386,8 +412,8 @@ TextureImporter:
         serializedVersion: 2
         x: 159
         y: 295
-        width: 96
-        height: 102
+        width: 95
+        height: 79
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -732,6 +758,94 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 372
+        width: 93
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33d34e5c50f381944a297aff3c9c2248
+      internalID: 1663415605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 500
+        width: 92
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3ca65a30de773045a547e3b9c1ae0e1
+      internalID: 1224307827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_29
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 374
+        width: 95
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 576695fd2f1693f4d9db13018466fbd6
+      internalID: -1356431814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG6_30
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 502
+        width: 95
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5562ab884b73aef4cbc39d8f584ce9a8
+      internalID: 807505532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -766,7 +880,11 @@ TextureImporter:
       PokemonTilemapNoBG6_24: 212900721
       PokemonTilemapNoBG6_25: -1419238348
       PokemonTilemapNoBG6_26: -1581376978
+      PokemonTilemapNoBG6_27: 1663415605
+      PokemonTilemapNoBG6_28: 1224307827
+      PokemonTilemapNoBG6_29: -1356431814
       PokemonTilemapNoBG6_3: -283329141825481402
+      PokemonTilemapNoBG6_30: 807505532
       PokemonTilemapNoBG6_4: -7351752946717724542
       PokemonTilemapNoBG6_5: 3867448748767205833
       PokemonTilemapNoBG6_6: 2434916397602747057

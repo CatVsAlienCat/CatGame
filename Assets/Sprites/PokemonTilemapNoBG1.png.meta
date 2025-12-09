@@ -233,11 +233,11 @@ TextureImporter:
         serializedVersion: 2
         x: 7
         y: 2083
-        width: 210
-        height: 438
+        width: 211
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 231}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -364,9 +364,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 6
-        y: 630
-        width: 162
-        height: 170
+        y: 643
+        width: 160
+        height: 94
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -387,8 +387,8 @@ TextureImporter:
         serializedVersion: 2
         x: 1
         y: 362
-        width: 153
-        height: 223
+        width: 154
+        height: 120
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -491,6 +491,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG1_15
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 2183
+        width: 211
+        height: 338
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 686907a63e017c74585936fc4c73e78a
+      internalID: -96730663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG1_16
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 737
+        width: 160
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23fae723f81ae6e4c86a6fdf69805d94
+      internalID: -1784325633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -513,6 +557,7 @@ TextureImporter:
       PokemonTilemapNoBG1_13: -1442912605
       PokemonTilemapNoBG1_14: 1795816696
       PokemonTilemapNoBG1_15: -96730663
+      PokemonTilemapNoBG1_16: -1784325633
       PokemonTilemapNoBG1_2: -8031283895323264370
       PokemonTilemapNoBG1_3: 868041600100793070
       PokemonTilemapNoBG1_4: -4638383002714288573

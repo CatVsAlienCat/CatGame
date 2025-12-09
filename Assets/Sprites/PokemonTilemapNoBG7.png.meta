@@ -201,6 +201,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -518,8 +544,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 1611
-        width: 126
-        height: 143
+        width: 127
+        height: 104
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -541,7 +567,7 @@ TextureImporter:
         x: 0
         y: 1387
         width: 256
-        height: 175
+        height: 174
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -585,7 +611,7 @@ TextureImporter:
         x: 62
         y: 1192
         width: 129
-        height: 152
+        height: 96
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -934,10 +960,10 @@ TextureImporter:
       name: PokemonTilemapNoBG7_33
       rect:
         serializedVersion: 2
-        x: 166
+        x: 167
         y: 350
-        width: 82
-        height: 152
+        width: 80
+        height: 81
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -996,6 +1022,72 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG7_36
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1288
+        width: 129
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d81089f8ebd7a41887eb69ab8bfd13
+      internalID: -320711740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG7_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1715
+        width: 127
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5bc4d1022cd80f45b413672dc8b5d81
+      internalID: 1027872204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG7_38
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 431
+        width: 80
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d938c40e99110b7458946a471da8bd92
+      internalID: 1172840688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1040,6 +1132,9 @@ TextureImporter:
       PokemonTilemapNoBG7_33: 2902049141598749156
       PokemonTilemapNoBG7_34: -415134310504710350
       PokemonTilemapNoBG7_35: 9086856557654796810
+      PokemonTilemapNoBG7_36: -320711740
+      PokemonTilemapNoBG7_37: 1027872204
+      PokemonTilemapNoBG7_38: 1172840688
       PokemonTilemapNoBG7_4: -8525111572796998530
       PokemonTilemapNoBG7_5: -8972967396767776774
       PokemonTilemapNoBG7_6: 8435876418263442699

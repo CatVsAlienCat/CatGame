@@ -222,6 +222,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -386,7 +412,7 @@ TextureImporter:
         x: 0
         y: 1995
         width: 213
-        height: 199
+        height: 151
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1178,9 +1204,9 @@ TextureImporter:
         x: 0
         y: 2206
         width: 213
-        height: 196
+        height: 147
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1199,10 +1225,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 2406
-        width: 157
-        height: 150
+        width: 159
+        height: 122
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1211,6 +1237,72 @@ TextureImporter:
       bones: []
       spriteID: b92dc67c933c85b319de6f08adb17ebc
       internalID: -1459943959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG3_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2146
+        width: 213
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b94375aa8e776a6448e84f08b2d91d85
+      internalID: 1953999784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG3_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2353
+        width: 213
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f85527fba9f3567478c2182dce145991
+      internalID: 189225334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG3_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2528
+        width: 159
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d91c0ebbf66f5014eb4a0ca6369de165
+      internalID: -1297271485
       vertices: []
       indices: 
       edges: []
@@ -1269,6 +1361,9 @@ TextureImporter:
       PokemonTilemapNoBG3_42: 6020193748589277218
       PokemonTilemapNoBG3_43: -72568595
       PokemonTilemapNoBG3_44: -1459943959
+      PokemonTilemapNoBG3_45: 1953999784
+      PokemonTilemapNoBG3_46: 189225334
+      PokemonTilemapNoBG3_47: -1297271485
       PokemonTilemapNoBG3_5: -1327940962933413266
       PokemonTilemapNoBG3_6: 3304802840489270995
       PokemonTilemapNoBG3_7: -2116627835252200902
