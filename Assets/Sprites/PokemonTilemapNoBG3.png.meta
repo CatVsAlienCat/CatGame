@@ -302,7 +302,7 @@ TextureImporter:
         x: 16
         y: 3199
         width: 189
-        height: 226
+        height: 152
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1294,7 +1294,7 @@ TextureImporter:
         width: 159
         height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1303,6 +1303,28 @@ TextureImporter:
       bones: []
       spriteID: d91c0ebbf66f5014eb4a0ca6369de165
       internalID: -1297271485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PokemonTilemapNoBG3_48
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 3351
+        width: 189
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60030a11cdf4ae84988ce68f296d8856
+      internalID: 1503428245
       vertices: []
       indices: 
       edges: []
@@ -1364,6 +1386,7 @@ TextureImporter:
       PokemonTilemapNoBG3_45: 1953999784
       PokemonTilemapNoBG3_46: 189225334
       PokemonTilemapNoBG3_47: -1297271485
+      PokemonTilemapNoBG3_48: 1503428245
       PokemonTilemapNoBG3_5: -1327940962933413266
       PokemonTilemapNoBG3_6: 3304802840489270995
       PokemonTilemapNoBG3_7: -2116627835252200902
