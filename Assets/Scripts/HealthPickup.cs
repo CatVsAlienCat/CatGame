@@ -11,7 +11,7 @@ public class HealthPickup : MonoBehaviour
             PlayerMovement player = other.GetComponent<PlayerMovement>();
             if (player != null)
             {
-                // Only pickup if we need health
+                // Solo recoger si necesitamos salud
                 if (player.Health < player.maxHealth)
                 {
                     player.Heal(healAmount);

@@ -1,30 +1,29 @@
-// This comment is added to force re-import
 using UnityEngine;
 using System.Collections;
 
 public abstract class Enemies_behavior : MonoBehaviour
 {
-   public  Transform Player;
-   public int Health;
-  public float shootCooldown;
+    public Transform Player;
+    public int Health;
+    public float shootCooldown;
 
     public float distanceRange;
     public float visionRange;
    
-   public GameObject bulletPrefab;
+    public GameObject bulletPrefab;
 
-   public Transform player_pos;
+    public Transform player_pos;
 
-   public Transform firePoint;
-   public Vector2 Direction;
-   private float LastShoot;
+    public Transform firePoint;
+    public Vector2 Direction;
+    private float LastShoot;
    
    
-   private SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;
 
-   [Header("Sprites")]
-   public Sprite spriteUp;
-   public Sprite spriteDown;
+    [Header("Sprites")]
+    public Sprite spriteUp;
+    public Sprite spriteDown;
     public Sprite spriteRight;
 
     [Header("Audio")]
@@ -50,7 +49,6 @@ public abstract class Enemies_behavior : MonoBehaviour
 
     protected void Awake()
     {
-        // Intenta encontrar al player si no está asignado
         if (Player == null)
         {
             FindPlayer();
@@ -59,7 +57,6 @@ public abstract class Enemies_behavior : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         
-        // Validar referencias críticas
         if (firePoint == null) Debug.LogWarning($"FirePoint no asignado en {gameObject.name}");
         if (bulletPrefab == null) Debug.LogWarning($"BulletPrefab no asignado en {gameObject.name}");
 
@@ -81,21 +78,20 @@ public abstract class Enemies_behavior : MonoBehaviour
     {
         if (isKnockedBack || isDying) return;
 
-        // Si no hay player, intentamos buscarlo de nuevo o salimos
         if (Player == null)
         {
             FindPlayer();
-            if (Player == null) {
-                // Debug.Log("Enemy: Player null, searching..."); // Commented to avoid spam
+            if (Player == null)
+            {
                 return;
-            } else {
-                 Debug.Log("Enemy: Player found!");
+            }
+            else
+            {
+                Debug.Log("Enemigo: ¡Jugador encontrado!");
             }
         }
 
         float distanceToPlayer = Vector3.Distance(transform.position, Player.position);
-        
-        // Debug.Log($"Enemy {gameObject.name}: Distance={distanceToPlayer}, Vision={visionRange}"); // Debug distance
 
         if (distanceToPlayer < visionRange)
         {
@@ -103,7 +99,7 @@ public abstract class Enemies_behavior : MonoBehaviour
             Vector2 target = new Vector2(Player.position.x, Player.position.y);
             Vector2 newPos = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
             
-            transform.position = newPos; // Explicit assignment
+            transform.position = newPos;
             
             UpdateOrientation(direction);
         }
@@ -114,7 +110,7 @@ public abstract class Enemies_behavior : MonoBehaviour
         if (rb != null)
         {
             isKnockedBack = true;
-            rb.linearVelocity = Vector2.zero; // Reset velocity before applying force
+            rb.linearVelocity = Vector2.zero;
             rb.AddForce(direction * force, ForceMode2D.Impulse);
             StartCoroutine(ResetKnockback());
         }
@@ -122,9 +118,9 @@ public abstract class Enemies_behavior : MonoBehaviour
 
     private IEnumerator ResetKnockback()
     {
-        yield return new WaitForSeconds(0.2f); // Knockback duration
+        yield return new WaitForSeconds(0.2f);
         isKnockedBack = false;
-        if (rb != null) rb.linearVelocity = Vector2.zero; // Stop sliding
+        if (rb != null) rb.linearVelocity = Vector2.zero;
     }
     
     void UpdateOrientation(Vector2 moveInput)
@@ -132,8 +128,6 @@ public abstract class Enemies_behavior : MonoBehaviour
         if (moveInput == Vector2.zero) return;
         if (spriteRenderer == null) return; 
 
-        // --- Sprite Logic ---
-        // Prioritize vertical sprites
         if (moveInput.y > 0.5f)
         {
             if(spriteUp != null) spriteRenderer.sprite = spriteUp;
@@ -144,7 +138,6 @@ public abstract class Enemies_behavior : MonoBehaviour
             if(spriteDown != null) spriteRenderer.sprite = spriteDown;
             spriteRenderer.flipX = false;
         }
-        // Horizontal sprites only if not moving much vertically
         else
         {
             if (moveInput.x > 0)
@@ -159,7 +152,6 @@ public abstract class Enemies_behavior : MonoBehaviour
             }
         }
         
-        // --- Rotation Logic for Shooting ---
         if (firePoint != null)
         {
             float angle = Mathf.Atan2(moveInput.y, moveInput.x) * Mathf.Rad2Deg - 90f;
@@ -181,15 +173,12 @@ public abstract class Enemies_behavior : MonoBehaviour
     {
         isDying = true;
         
-        // Disable physics and collision to prevent further interaction
         if (rb != null) rb.simulated = false;
         Collider2D col = GetComponent<Collider2D>();
         if (col != null) col.enabled = false;
 
-        // Play drop logic immediately
         TryDropItem();
 
-        // Play clean animation if sprites are assigned
         if (deathSprites != null && deathSprites.Length > 0 && spriteRenderer != null)
         {
             foreach (var sprite in deathSprites)
@@ -224,7 +213,7 @@ public abstract class Enemies_behavior : MonoBehaviour
             Bullet bulletScript = bullet.GetComponent<Bullet>();
             if (bulletScript != null)
             {
-                bulletScript.isPlayerBullet = false; // Explicitly set as an enemy bullet
+                bulletScript.isPlayerBullet = false;
             }
         }
     }
@@ -237,9 +226,6 @@ public abstract class Enemies_behavior : MonoBehaviour
             shoot();
         }
     }
-    
-    
-    
     
     void OnDrawGizmosSelected()
     {

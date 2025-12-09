@@ -51,7 +51,6 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        // Debug Input to test crossfade
         if (Input.GetKeyDown(KeyCode.M))
         {
             PlayRandomMusic();
@@ -61,13 +60,11 @@ public class AudioManager : MonoBehaviour
 
         if (activeSource != null)
         {
-            // Only control volume if NOT fading (fading handles its own volume)
             if (fadeCoroutine == null)
             {
                 activeSource.volume = musicVolume;
             }
 
-            // Handle Clipping
             if (currentTrack.HasValue && currentTrack.Value.useClipping && activeSource.isPlaying)
             {
                 if (activeSource.time >= currentTrack.Value.endTime)
@@ -100,7 +97,6 @@ public class AudioManager : MonoBehaviour
         AudioSource activeSource = isUsingSourceA ? musicSourceA : musicSourceB;
         AudioSource nextSource = isUsingSourceA ? musicSourceB : musicSourceA;
 
-        // Setup Next Source
         currentTrack = track;
         nextSource.clip = track.clip;
         nextSource.loop = true;
@@ -117,7 +113,6 @@ public class AudioManager : MonoBehaviour
 
         nextSource.Play();
 
-        // Crossfade
         float timer = 0f;
         while (timer < fadeDuration)
         {
@@ -133,7 +128,6 @@ public class AudioManager : MonoBehaviour
             yield return null;
         }
 
-        // Finalize
         if (activeSource.isPlaying)
         {
             activeSource.Stop();
@@ -141,13 +135,11 @@ public class AudioManager : MonoBehaviour
         }
         nextSource.volume = musicVolume;
 
-        // Swap Active Source Flag
         isUsingSourceA = !isUsingSourceA;
         
         fadeCoroutine = null;
     }
 
-    // Overload for backward compatibility or direct clip playing
     public void PlayMusic(AudioClip clip)
     {
         MusicTrack tempTrack = new MusicTrack { clip = clip, useClipping = false };

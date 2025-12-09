@@ -43,7 +43,6 @@ public class MeleeAttack : MonoBehaviour
             if (enemy != null)
             {
                 enemy.Hit(damage);
-                // Calculate knockback direction (away from player/hitbox center)
                 Vector2 direction = (enemy.transform.position - transform.position).normalized;
                 enemy.ApplyKnockback(direction, knockbackForce);
             }

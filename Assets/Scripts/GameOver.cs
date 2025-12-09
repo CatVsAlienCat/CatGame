@@ -11,19 +11,19 @@ public class GameOverUI : MonoBehaviour
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(true);
-            Time.timeScale = 0f; // Pause the game
+            Time.timeScale = 0f;
         }
     }
 
     public void RestartGame()
     {
-        Time.timeScale = 1f; // Unpause
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void GoToMenu()
     {
-        Time.timeScale = 1f; // Unpause
+        Time.timeScale = 1f;
         SceneManager.LoadScene(mainMenuSceneName);
     }
 }

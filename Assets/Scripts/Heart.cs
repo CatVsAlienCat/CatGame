@@ -60,7 +60,7 @@ public class Heart : MonoBehaviour
             yield return new WaitForSeconds(animationSpeed);
         }
 
-        // After animation, set to empty state
+        // Después de la animación, establecer estado vacío
         SetActive(false);
     }
 }

@@ -5,7 +5,7 @@ public class Bullet : MonoBehaviour
     public float speed = 20f;
     public float lifeTime = 2f;
     public int damage = 1;
-    public bool isPlayerBullet; // This flag will distinguish player bullets from enemy bullets
+    public bool isPlayerBullet;
     public float knockbackForce = 0f;
 
     private Rigidbody2D rb;
@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Destroy(gameObject, lifeTime); // lifeTime is now set by WeaponController
+        Destroy(gameObject, lifeTime);
 
         if (rb != null)
         {
@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
 
      void OnTriggerEnter2D(Collider2D other)
     {
-        // Player bullets damage enemies
+        // Las balas del jugador dañan a los enemigos
         if (isPlayerBullet)
         {
             Enemies_behavior enemy = other.GetComponent<Enemies_behavior>();
@@ -35,19 +35,17 @@ public class Bullet : MonoBehaviour
             {
                 enemy.Hit(damage);
                 
-                // Apply Knockback
+                // Aplicar retroceso
                 if (knockbackForce > 0)
                 {
                     Vector2 direction = (enemy.transform.position - transform.position).normalized;
-                    // Or use bullet velocity direction for more realistic impact:
-                    // Vector2 direction = rb.linearVelocity.normalized; 
                     enemy.ApplyKnockback(direction, knockbackForce);
                 }
 
                 Destroy(gameObject);
             }
         }
-        // Enemy bullets damage the player
+        // Las balas enemigas dañan al jugador
         else
         {
             PlayerMovement player = other.GetComponent<PlayerMovement>();
@@ -57,7 +55,7 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        // Also destroy bullet if it hits something else, like a wall
+        // Destruir bala si golpea algo más (ej: paredes)
         if (other.GetComponent<PlayerMovement>() == null && other.GetComponent<Enemies_behavior>() == null){
             Destroy(gameObject);
         }

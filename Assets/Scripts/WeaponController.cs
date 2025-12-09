@@ -36,7 +36,6 @@ public class WeaponController : MonoBehaviour
         if (!weapons.Contains(newWeapon))
         {
             weapons.Add(newWeapon);
-            // Optionally switch to new weapon immediately
             currentWeaponIndex = weapons.Count - 1;
             OnWeaponChanged?.Invoke(weapons[currentWeaponIndex]);
         }
@@ -63,7 +62,7 @@ public class WeaponController : MonoBehaviour
     {
         if (weapons.Count <= 1) return;
 
-        // Previous Weapon
+        // Arma anterior
         if (Input.GetKeyDown(KeyCode.Q))
         {
             currentWeaponIndex--;
@@ -72,7 +71,7 @@ public class WeaponController : MonoBehaviour
             UpdatePlayerVisuals();
         }
 
-        // Next Weapon
+        // Arma siguiente
         if (Input.GetKeyDown(KeyCode.E))
         {
             currentWeaponIndex++;
@@ -81,7 +80,7 @@ public class WeaponController : MonoBehaviour
             UpdatePlayerVisuals();
         }
 
-        // Number Keys 1-9
+        // Teclas numéricas 1-9
         for (int i = 0; i < weapons.Count && i < 9; i++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
@@ -100,7 +99,6 @@ public class WeaponController : MonoBehaviour
 
         AudioManager.Instance.PlaySFX(currentWeapon.shootSound, currentWeapon.shootVolume);
 
-        // Trigger Attack Animation
         PlayerMovement player = GetComponent<PlayerMovement>();
         if (player != null)
         {
@@ -109,26 +107,23 @@ public class WeaponController : MonoBehaviour
 
         if (currentWeapon.isMelee)
         {
-            // Melee Attack Logic
-            // Instantiate as child of firePoint
+            // Lógica de ataque cuerpo a cuerpo
             GameObject hitbox = Instantiate(currentWeapon.bulletPrefab, firePoint);
-            // Apply spawn distance (move forward along Y axis)
             hitbox.transform.localPosition = new Vector3(0, currentWeapon.spawnDistance, 0);
-            // Reset rotation to match parent (optional, but good for consistency)
             hitbox.transform.localRotation = Quaternion.identity;
             
             MeleeAttack meleeScript = hitbox.GetComponent<MeleeAttack>();
             if (meleeScript != null)
             {
                 meleeScript.damage = currentWeapon.damage;
-                meleeScript.lifeTime = currentWeapon.bulletLifeTime; // Use lifetime for duration
+                meleeScript.lifeTime = currentWeapon.bulletLifeTime;
                 meleeScript.isPlayerAttack = true;
                 meleeScript.knockbackForce = currentWeapon.knockbackForce;
             }
         }
         else
         {
-            // Ranged Attack Logic
+            // Lógica de ataque a distancia
             GameObject bullet = Instantiate(currentWeapon.bulletPrefab, firePoint.position, firePoint.rotation);
             
             Bullet bulletScript = bullet.GetComponent<Bullet>();
@@ -141,7 +136,7 @@ public class WeaponController : MonoBehaviour
                 bulletScript.knockbackForce = currentWeapon.knockbackForce;
             }
 
-            // Ignore collision between bullet and player
+            // Ignorar colisión entre la bala y el jugador
             Collider2D playerCollider = GetComponent<Collider2D>();
             Collider2D bulletCollider = bullet.GetComponent<Collider2D>();
             if (playerCollider != null && bulletCollider != null)
